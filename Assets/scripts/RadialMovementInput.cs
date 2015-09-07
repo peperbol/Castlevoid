@@ -6,9 +6,9 @@ public class RadialMovementInput : RadialMovement {
     public string leftButton;
     public string rightButton;
     public bool inUse;
+    public Camera cam;
 
-
-    protected void Update() {
+    protected override void Update() {
         base.Update();
         if (inUse) {
             int i = 0;
@@ -17,6 +17,7 @@ public class RadialMovementInput : RadialMovement {
             if (i > 0) { Move(false); }
             else if (i < 0) { Move(true); }
         }
+        cam.enabled = inUse;
     }
 
 }
