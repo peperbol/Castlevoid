@@ -17,7 +17,6 @@ public class InputSwitch : MonoBehaviour {
         for (int i = 0; i < inputs.Length; i++)
         {
             inputs[i].inUse = i == Index;
-            Debug.Log(Index);
         }
     }
     void Start() {
