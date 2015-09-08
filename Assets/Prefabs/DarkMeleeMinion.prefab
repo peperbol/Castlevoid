@@ -128,7 +128,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 55b5a22a623e66949918a360c4f4b41f, type: 2}
+  - {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -152,7 +152,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 55b5a22a623e66949918a360c4f4b41f, type: 2}
+  - {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -230,8 +230,7 @@ MonoBehaviour:
   sight: .699999988
   enemyMask:
     serializedVersion: 2
-    m_Bits: 256
-  walkSpeed: 4
+    m_Bits: 4352
   timePerAttack: 1.5
 --- !u!1001 &100100000
 Prefab:
@@ -291,6 +290,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: .42719698
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyMask.m_Bits
+      value: 4352
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -128,7 +128,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 09fe58cd5e6939b45a0bbdbbb5eb68d1, type: 2}
+  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -152,7 +152,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 09fe58cd5e6939b45a0bbdbbb5eb68d1, type: 2}
+  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -230,15 +230,18 @@ MonoBehaviour:
   sight: .349999994
   enemyMask:
     serializedVersion: 2
-    m_Bits: 512
-  walkSpeed: 4
+    m_Bits: 8704
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: enemyMask.m_Bits
+      value: 8704
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127030}
