@@ -13,9 +13,5 @@ public class ShieldMinion : Minion {
         if (damager is Projectile) return;
         Health--;
     }
-
-    protected override IEnumerator Die()
-    {
-        throw new NotImplementedException();
-    }
+    
 }

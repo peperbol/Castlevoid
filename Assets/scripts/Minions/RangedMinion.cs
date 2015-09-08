@@ -22,9 +22,5 @@ public class RangedMinion : Minion {
         yield return new WaitForSeconds(timePerAttack);
         ready = true;
     }
-
-    protected override IEnumerator Die()
-    {
-        throw new NotImplementedException();
-    }
+    
 }

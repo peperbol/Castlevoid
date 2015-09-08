@@ -841,41 +841,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .499999821
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.50000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -.150000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -.500000179
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -.499999911
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0
+    - target: {fileID: 127030, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
@@ -3871,7 +3839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   houses: []
-  melee: {fileID: 0}
+  melee: {fileID: 11434208, guid: 19c00c29443c9024f8008444c3bc2ca3, type: 2}
   ranged: {fileID: 11459468, guid: b03dba11cb3581f44847011853b77426, type: 2}
   shield: {fileID: 11409580, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
   isLight: 1
