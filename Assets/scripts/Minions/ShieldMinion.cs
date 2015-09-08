@@ -9,6 +9,7 @@ public class ShieldMinion : Minion {
     }
     public override void Damage(MonoBehaviour damager)
     {
+        animator.SetTrigger("Dmg");
         if (damager is Projectile) return;
         Health--;
     }

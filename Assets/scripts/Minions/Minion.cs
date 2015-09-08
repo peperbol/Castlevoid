@@ -14,31 +14,46 @@ public abstract class Minion : RadialMovement, Attackable
 
     public int health;
     public Animator animator;
+    public float timeToDie;
 
-    public int Health {
+    public int Health
+    {
         get { return health; }
         set
-        { health = value;
+        {
+            health = value;
 
-            if (health <= 0) {
+            if (health <= 0)
+            {
                 //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
                 StartCoroutine(Die());
             }
-       }
+        }
     }
-    protected abstract IEnumerator Die();
+    protected virtual IEnumerator Die()
+    {
+        Debug.Log(1);
+        dead = true;
+        Destroy(GetComponent<Collider2D>());
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(timeToDie);
+        Destroy(gameObject);
+    }
     public float sight;
     public LayerMask enemyMask;
     private bool directionIsToLeft;
-    public bool DirectionIsToLeft {
+    public bool DirectionIsToLeft
+    {
         get { return directionIsToLeft; }
-        set { 
-            if(directionIsToLeft != value)
-                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y,transform.localScale.z);
+        set
+        {
+            if (directionIsToLeft != value)
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
             directionIsToLeft = value;
         }
     }
-    private Vector2 V3toV2(Vector3 v) {
+    private Vector2 V3toV2(Vector3 v)
+    {
         return new Vector2(v.x, v.y);
     }
     protected bool CanSeeEnemy(out Attackable a, out GameObject go)
@@ -56,18 +71,28 @@ public abstract class Minion : RadialMovement, Attackable
 
     protected abstract void Attack(GameObject go, Attackable a);
 
-    protected override void Update() {
+    bool dead = false;
+
+    protected override void Update()
+    {
         base.Update();
-        Attackable a;
-        GameObject go;
-        if (CanSeeEnemy(out a, out go)) {
-            Attack(go, a);
-        } else
-        Move(DirectionIsToLeft);
+        if (!dead)
+        {
+            Debug.Log(2);
+            Attackable a;
+            GameObject go;
+            if (CanSeeEnemy(out a, out go))
+            {
+                Attack(go, a);
+            }
+            else
+                Move(DirectionIsToLeft);
+        }
     }
 
-    public virtual void Damage(MonoBehaviour damager) {
+    public virtual void Damage(MonoBehaviour damager)
+    {
         Health--;
     }
-    public enum Type { Melee, Ranged, Shield, None}
+    public enum Type { Melee, Ranged, Shield, None }
 }

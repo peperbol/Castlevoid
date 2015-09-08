@@ -68,7 +68,6 @@ public class Builder : RadialMovementInput
                     value[i].enabled = true;
                 }
             }
-            Debug.Log(2);
             buildCurrentVisual = value;
         }
     }
@@ -140,7 +139,12 @@ public class Builder : RadialMovementInput
         {
             for (int i = 0; i < CurrentPreview.Length; i++)
             {
-                CurrentPreview[i].material = (CanBuild()) ? buildPositive : buildNegative;
+                Material[] mats = CurrentPreview[i].materials;
+                for (int j = 0; j < mats.Length; j++)
+                {
+                    mats[j] = (CanBuild()) ? buildPositive : buildNegative;
+                }
+                CurrentPreview[i].materials = mats;
             }
         }
     }
