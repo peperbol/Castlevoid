@@ -122,7 +122,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: joystick 1 button 4
     gravity: 1000
@@ -138,7 +138,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: joystick 2 button 4
     gravity: 1000
@@ -154,7 +154,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: joystick 1 button 5
     gravity: 1000
@@ -170,7 +170,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: right ctrl
     altNegativeButton: 
     altPositiveButton: joystick 2 button 5
     gravity: 1000
@@ -221,13 +221,13 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: .00100000005
-    sensitivity: 1000
+    sensitivity: 3
     snap: 0
     invert: 1
     type: 2
-    axis: 7
+    axis: 6
     joyNum: 1
   - serializedVersion: 3
     m_Name: BuildMode2
@@ -237,13 +237,13 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 3
+    gravity: 1000
     dead: .00100000005
-    sensitivity: 3
+    sensitivity: 1000
     snap: 0
     invert: 1
     type: 2
-    axis: 6
+    axis: 7
     joyNum: 2
   - serializedVersion: 3
     m_Name: Attack1

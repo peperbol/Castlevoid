@@ -8,7 +8,7 @@ public class Base : MonoBehaviour {
     public Minion ranged;
     public Minion shield;
     public bool isLight;
-    public float GetMinionsPerMinute(int direction = 0, Minion.Type t = Minion.Type.None) {
+    public float GetMinionsPerMinute(int direction = 0, Minion.Type t = Minion.Type.All) {
 
         float i = 0;
         List<House> h = houses;
