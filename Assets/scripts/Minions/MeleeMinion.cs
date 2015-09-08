@@ -3,15 +3,22 @@ using System.Collections;
 using System;
 
 public class MeleeMinion : Minion {
-    public override void Damage()
-    {
-        throw new NotImplementedException();
-    }
+    public float timePerAttack;
+    private bool ready = true;
 
     protected override void Attack(Attackable a)
     {
-        throw new NotImplementedException();
+
+        if (ready) {
+            a.Damage();
+            StartCoroutine(Wait());
+        }
     }
-    
+
+    IEnumerator Wait() {
+        ready = false;
+        yield return new WaitForSeconds(timePerAttack);
+        ready = true;
+    }
 
 }

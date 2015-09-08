@@ -10,6 +10,20 @@ public abstract class Minion : RadialMovement, Attackable
         m.DirectionIsToLeft = toLeft;
     }
 
+    public float health;
+
+    public float Health {
+        get { return health; }
+        set
+        { health = value;
+
+            if (health <= 0) {
+                //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+                GameObject.Destroy(gameObject);
+            }
+       }
+    }
+
     public float sight;
     public LayerMask enemyMask;
     private bool directionIsToLeft;
@@ -17,7 +31,7 @@ public abstract class Minion : RadialMovement, Attackable
         get { return directionIsToLeft; }
         set { 
             directionIsToLeft = value;
-
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y,transform.localScale.z);
         }
     }
     public float walkSpeed = 4;
@@ -46,5 +60,7 @@ public abstract class Minion : RadialMovement, Attackable
         Move(DirectionIsToLeft);
     }
 
-    public abstract void Damage();
+    public void Damage() {
+        Health--;
+    }
 }
