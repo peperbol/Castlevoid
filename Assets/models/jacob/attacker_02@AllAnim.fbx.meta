@@ -1,28 +1,18 @@
 fileFormatVersion: 2
-guid: f53c926472fc9604d9b53230e8244d09
-timeCreated: 1441735385
+guid: 1c58a30558f484b99bfb729d74c30742
+timeCreated: 1441741219
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group
+    100000: //RootNode
     100002: joint1
     100004: joint2
-    100006: pasted__pCube1
-    100008: pCube1
-    100010: //RootNode
-    400000: group
+    400000: //RootNode
     400002: joint1
     400004: joint2
-    400006: pasted__pCube1
-    400008: pCube1
-    400010: //RootNode
-    4300000: pCube1
-    4300002: pasted__pCube1
     7400000: Take 001
     9500000: //RootNode
-    13700000: pasted__pCube1
-    13700002: pCube1
   materials:
     importMaterials: 1
     materialName: 0
