@@ -42,6 +42,7 @@ public class House : RadialPosition, Attackable
     public Base teamBase;
     public Minion.Type type;
     public bool completed = false;
+    private float timer = 0.1f;
     public void OnDestroy()
     {
         if(teamBase != null)
@@ -71,5 +72,29 @@ public class House : RadialPosition, Attackable
             }
         }
         completed = true;
+    }
+
+    public void Spawn()
+    {
+        timer -= Time.deltaTime * MinionsPerMinute;
+        if (timer <= 0)
+        {
+            timer += 60;
+
+            Minion m = null;
+            switch (type)
+            {
+                case Minion.Type.Melee:
+                    m = teamBase.melee;
+                    break;
+                case Minion.Type.Ranged:
+                    m = teamBase.ranged;
+                    break;
+                case Minion.Type.Shield:
+                    m = teamBase.shield;
+                    break;
+            }
+            Minion.Spawn(m, directionIsToLeft, Position);
+        }
     }
 }

@@ -117,10 +117,10 @@ MonoBehaviour:
   center: {fileID: 0}
   radius: 15
   position: 19
-  health: 10
+  health: 6
   visuals:
   - {fileID: 2385570}
-  minionsPerMinute: 5
+  minionsPerMinute: 2
   upgradesLeft: 0
   directionIsToLeft: 0
   teamBase: {fileID: 0}
@@ -137,6 +137,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: minionsPerMinute
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193846}
