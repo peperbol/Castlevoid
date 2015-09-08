@@ -156,7 +156,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
+  - {fileID: 2100000, guid: 09fe58cd5e6939b45a0bbdbbb5eb68d1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -180,7 +180,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
+  - {fileID: 2100000, guid: 09fe58cd5e6939b45a0bbdbbb5eb68d1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -258,10 +258,11 @@ MonoBehaviour:
   sight: 25
   enemyMask:
     serializedVersion: 2
-    m_Bits: 4352
+    m_Bits: 256
+  walkSpeed: 4
   timePerAttack: 2
   projectilePrefab: {fileID: 11438820, guid: eec5b9c0a63c2e84ab085f3f4b8c80c0, type: 2}
-  ProjectileForce: {x: 300, y: 50}
+  ProjectileForce: {x: 5, y: 25}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -274,18 +275,6 @@ Prefab:
       value: 
       objectReference: {fileID: 11438820, guid: eec5b9c0a63c2e84ab085f3f4b8c80c0,
         type: 2}
-    - target: {fileID: 0}
-      propertyPath: ProjectileForce.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: ProjectileForce.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: enemyMask.m_Bits
-      value: 4352
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166204}
