@@ -4,8 +4,8 @@ using System.Collections;
 public class MinionSpawner : RadialPosition
 {
     
-    private float nextLeft;
-    private float nextRight;
+    private float nextLeft = 1;
+    private float nextRight = 1;
     public Minion melee;
     public Minion ranged;
     public Minion shield;
@@ -18,16 +18,17 @@ public class MinionSpawner : RadialPosition
         Spawn(ref nextLeft,  true);
         Spawn(ref nextRight,  false);
     }
-    public void Spawn(ref float timer,  bool toLeft) {
-        timer -= Time.deltaTime;
-        if (timer < 0) {
-            float m = team.GetMinionsPerMinute((toLeft) ? -1 : 1);
-            timer += 60 / m;
+    public void Spawn(ref float timer,  bool toLeft)
+    {
+        float m = team.GetMinionsPerMinute((toLeft) ? -1 : 1);
+        timer -= Time.deltaTime * m;
+        if (timer <= 0) {
+            timer += 60 ;
 
-            Random.Range(0, m);
+            float r = Random.Range(0, m);
             float meleec = team.GetMinionsPerMinute((toLeft) ? -1 : 1, Minion.Type.Melee);
             float shieldc = team.GetMinionsPerMinute((toLeft) ? -1 : 1, Minion.Type.Shield);
-            Minion.Spawn(((m < meleec) ? melee :((m < meleec +shieldc)?shield:ranged)), toLeft, Position);
+            Minion.Spawn(((r < meleec) ? melee :((r < meleec +shieldc)?shield:ranged)), toLeft, Position);
         }
     }
 }

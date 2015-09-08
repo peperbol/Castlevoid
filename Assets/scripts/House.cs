@@ -9,6 +9,7 @@ public class House : RadialPosition, Attackable
     {
         House h = Instantiate(prefab);
         h.center = GameObject.FindGameObjectWithTag("Center").transform;
+        
         h.Position = position;
         h.teamBase = team;
         h.directionIsToLeft = team.isLeftTheWeakest;
@@ -16,7 +17,7 @@ public class House : RadialPosition, Attackable
 
     }
     public int health;
-
+    public Renderer[] visuals;
     public int Health
     {
         get { return health; }
@@ -43,6 +44,7 @@ public class House : RadialPosition, Attackable
     public bool completed = false;
     public void OnDestroy()
     {
+        if(teamBase != null)
         teamBase.houses.Remove(this);
     }
 
@@ -58,9 +60,15 @@ public class House : RadialPosition, Attackable
         for (int i = 0; i < 4; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            GetComponent<Renderer>().enabled = false;
+            for (int j = 0; j < visuals.Length; j++)
+            {
+                visuals[j].enabled = false;
+            }
             yield return new WaitForSeconds(0.5f);
-            GetComponent<Renderer>().enabled = true;
+            for (int j = 0; j < visuals.Length; j++)
+            {
+                visuals[j].enabled = true;
+            }
         }
         completed = true;
     }

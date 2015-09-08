@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Base : MonoBehaviour {
     public List<House> houses = new List<House>();
-    
     public float GetMinionsPerMinute(int direction = 0, Minion.Type t = Minion.Type.All) {
 
         float i = 0;

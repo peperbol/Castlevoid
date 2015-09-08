@@ -25,10 +25,16 @@ public class Projectile : MonoBehaviour
     {
         timeToLive -= Time.deltaTime;
         if (timeToLive <= 0) Destroy(gameObject);
-        if (target == null) return;
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log(3);
         Vector2 dir = ((Vector2)(target.position - transform.position));
+        float d = dir.sqrMagnitude;
         dir = dir.normalized * steerForce;
-        rb.AddForce(dir * Time.deltaTime);
+        rb.AddForce(dir * Time.deltaTime / d );
     }
     void OnCollisionEnter2D(Collision2D coll)
     {

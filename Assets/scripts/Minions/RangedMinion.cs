@@ -7,12 +7,12 @@ public class RangedMinion : Minion {
     private bool ready = true;
     public Projectile projectilePrefab;
     public Vector2 ProjectileForce;
-    private Vector2 worldForce { get { return transform.TransformPoint(ProjectileForce); } }
+    private Vector2 worldForce { get { return transform.TransformPoint((DirectionIsToLeft) ? new Vector2(ProjectileForce.x, ProjectileForce.y) : ProjectileForce); } }
     protected override void Attack(GameObject go, Attackable a)
     {
 
         if (ready) {
-            Projectile.Spawn(projectilePrefab, transform.position,(DirectionIsToLeft) ? -worldForce : worldForce, go.transform);
+            Projectile.Spawn(projectilePrefab, transform.position,worldForce, go.transform);
             StartCoroutine(Wait());
         }
     }
