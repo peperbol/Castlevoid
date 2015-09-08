@@ -12,7 +12,7 @@ public class House : RadialPosition, Attackable
         
         h.Position = position;
         h.teamBase = team;
-        h.directionIsToLeft = team.isLeftTheWeakest;
+        h.DirectionIsToLeft = !(team.isLight) == (position < 270 && position > 90);
         team.houses.Add(h);
 
     }
@@ -39,6 +39,18 @@ public class House : RadialPosition, Attackable
     }
     public int upgradesLeft;
     public bool directionIsToLeft;
+    public bool DirectionIsToLeft
+    {
+        get { return directionIsToLeft; }
+        set
+        {
+
+            if (directionIsToLeft != value)
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            directionIsToLeft = value;
+
+        }
+    }
     public Base teamBase;
     public Minion.Type type;
     public bool completed = false;
@@ -58,19 +70,7 @@ public class House : RadialPosition, Attackable
         StartCoroutine(Building());
     }
     IEnumerator Building() {
-        for (int i = 0; i < 4; i++)
-        {
-            yield return new WaitForSeconds(0.5f);
-            for (int j = 0; j < visuals.Length; j++)
-            {
-                visuals[j].enabled = false;
-            }
-            yield return new WaitForSeconds(0.5f);
-            for (int j = 0; j < visuals.Length; j++)
-            {
-                visuals[j].enabled = true;
-            }
-        }
+        yield return null;
         completed = true;
     }
 
@@ -94,7 +94,12 @@ public class House : RadialPosition, Attackable
                     m = teamBase.shield;
                     break;
             }
-            Minion.Spawn(m, directionIsToLeft, Position);
+            Minion.Spawn(m, DirectionIsToLeft, Position);
         }
+    }
+    protected override void Update()
+    {
+        base.Update();
+        Spawn();
     }
 }

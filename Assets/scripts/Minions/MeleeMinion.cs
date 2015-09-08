@@ -36,7 +36,7 @@ public class MeleeMinion : Minion {
 
     protected override IEnumerator Die()
     {
-        //animator.;
+        animator.SetTrigger("Die");
         yield return null;
     }
 }
