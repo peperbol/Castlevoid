@@ -802,84 +802,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390273148}
   m_Mesh: {fileID: 4300006, guid: 95f647859d94543e785447d9ea9b021d, type: 3}
---- !u!1001 &407438046
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 426134, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .499999821
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.50000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -.150000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -.500000179
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -.499999911
-      objectReference: {fileID: 0}
-    - target: {fileID: 471786, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &480022027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4029,7 @@ MonoBehaviour:
   position: 90
   melee: {fileID: 0}
   ranged: {fileID: 11462754, guid: c523e40c12b51cf4abccf2f5655079a1, type: 2}
-  shield: {fileID: 11456130, guid: 6ddc76dfe623dad4dbb1dae3d55e5de1, type: 2}
+  shield: {fileID: 0}
   team: {fileID: 2091729168}
 --- !u!4 &2091729167
 Transform:
@@ -4135,7 +4057,7 @@ MonoBehaviour:
   houses: []
   melee: {fileID: 11434208, guid: f39e6be876942504881c3a859e1152f4, type: 2}
   ranged: {fileID: 11462754, guid: c523e40c12b51cf4abccf2f5655079a1, type: 2}
-  shield: {fileID: 11456130, guid: 6ddc76dfe623dad4dbb1dae3d55e5de1, type: 2}
+  shield: {fileID: 11465552, guid: 6ddc76dfe623dad4dbb1dae3d55e5de1, type: 2}
   isLight: 0
 --- !u!1 &2113060865
 GameObject:
@@ -4282,7 +4204,7 @@ MonoBehaviour:
   radius: 15
   position: 270
   melee: {fileID: 0}
-  ranged: {fileID: 11459468, guid: b03dba11cb3581f44847011853b77426, type: 2}
+  ranged: {fileID: 0}
   shield: {fileID: 11409580, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
   team: {fileID: 2123535081}
 --- !u!4 &2123535080
@@ -4309,7 +4231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   houses: []
-  melee: {fileID: 0}
-  ranged: {fileID: 11459468, guid: b03dba11cb3581f44847011853b77426, type: 2}
+  melee: {fileID: 11434208, guid: 19c00c29443c9024f8008444c3bc2ca3, type: 2}
+  ranged: {fileID: 11404936, guid: a65823dfddb7dd74297e10444bc34e63, type: 2}
   shield: {fileID: 11409580, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
   isLight: 1

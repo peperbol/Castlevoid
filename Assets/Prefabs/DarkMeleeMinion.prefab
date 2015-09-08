@@ -249,7 +249,7 @@ MonoBehaviour:
   health: 3
   animator: {fileID: 9563282}
   timeToDie: 1.5
-  sight: .699999988
+  sight: .800000012
   enemyMask:
     serializedVersion: 2
     m_Bits: 4352
@@ -342,6 +342,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enemyMask.m_Bits
       value: 4352
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sight
+      value: .800000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

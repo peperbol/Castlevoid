@@ -78,7 +78,6 @@ public abstract class Minion : RadialMovement, Attackable
         base.Update();
         if (!dead)
         {
-            Debug.Log(2);
             Attackable a;
             GameObject go;
             if (CanSeeEnemy(out a, out go))
