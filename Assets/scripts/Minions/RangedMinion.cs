@@ -23,4 +23,8 @@ public class RangedMinion : Minion {
         ready = true;
     }
 
+    protected override IEnumerator Die()
+    {
+        throw new NotImplementedException();
+    }
 }

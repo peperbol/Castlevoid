@@ -13,6 +13,7 @@ public abstract class Minion : RadialMovement, Attackable
     }
 
     public int health;
+    public Animator animator;
 
     public int Health {
         get { return health; }
@@ -21,11 +22,11 @@ public abstract class Minion : RadialMovement, Attackable
 
             if (health <= 0) {
                 //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-                GameObject.Destroy(gameObject);
+                StartCoroutine(Die());
             }
        }
     }
-
+    protected abstract IEnumerator Die();
     public float sight;
     public LayerMask enemyMask;
     private bool directionIsToLeft;
