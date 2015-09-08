@@ -4,10 +4,12 @@ using System;
 
 public abstract class Minion : RadialMovement, Attackable
 {
-    public static void Spawn(Minion prefab, bool toLeft)
+    public static void Spawn(Minion prefab, bool toLeft, float pos)
     {
         Minion m = Instantiate(prefab);
+        m.center = GameObject.FindGameObjectWithTag("Center").transform;
         m.DirectionIsToLeft = toLeft;
+        m.Position = pos;
     }
 
     public float health;
@@ -30,8 +32,9 @@ public abstract class Minion : RadialMovement, Attackable
     public bool DirectionIsToLeft {
         get { return directionIsToLeft; }
         set { 
+            if(directionIsToLeft != value)
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y,transform.localScale.z);
             directionIsToLeft = value;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y,transform.localScale.z);
         }
     }
     public float walkSpeed = 4;
@@ -41,7 +44,7 @@ public abstract class Minion : RadialMovement, Attackable
     protected bool CanSeeEnemy(out Attackable a)
     {
         a = null;
-        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.right : -transform.right, sight, enemyMask);
+        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, sight, enemyMask);
 
         if (h.collider == null) return false;
 
@@ -53,6 +56,7 @@ public abstract class Minion : RadialMovement, Attackable
     protected abstract void Attack(Attackable a);
 
     protected override void Update() {
+        base.Update();
         Attackable a;
         if (CanSeeEnemy(out a)) {
             Attack(a);
