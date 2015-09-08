@@ -68,5 +68,5 @@ public abstract class Minion : RadialMovement, Attackable
     public virtual void Damage(MonoBehaviour damager) {
         Health--;
     }
-    public enum Type { Melee, Ranged, Shield, All}
+    public enum Type { Melee, Ranged, Shield, None}
 }
