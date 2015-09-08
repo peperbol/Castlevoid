@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 105422}
   m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
   m_LocalPosition: {x: -.479999989, y: 0, z: 0}
-  m_LocalScale: {x: -50, y: 50, z: 50}
+  m_LocalScale: {x: -30, y: 30, z: 30}
   m_Children:
   - {fileID: 404736}
   - {fileID: 414288}
@@ -190,9 +190,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .563363075, y: .0150229931}
+  m_Offset: {x: .165066719, y: -.0163037777}
   serializedVersion: 2
-  m_Size: {x: 1.58589745, y: .579354763}
+  m_Size: {x: .896710694, y: .42719698}
 --- !u!95 &9551164
 Animator:
   serializedVersion: 3
@@ -225,14 +225,14 @@ MonoBehaviour:
   radius: 15
   position: 0
   force: 1
-  drag: .184
-  health: 4
+  drag: .150000006
+  health: 3
   sight: .699999988
   enemyMask:
     serializedVersion: 2
     m_Bits: 256
   walkSpeed: 4
-  timePerAttack: 1
+  timePerAttack: 1.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -242,11 +242,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: timePerAttack
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: drag
-      value: .184
+      value: .150000006
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: force
@@ -258,7 +258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: radius
@@ -266,11 +266,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: -1
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: .165066719
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: -.0163037777
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: .896710694
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: .42719698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

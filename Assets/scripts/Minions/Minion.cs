@@ -41,30 +41,33 @@ public abstract class Minion : RadialMovement, Attackable
     private Vector2 V3toV2(Vector3 v) {
         return new Vector2(v.x, v.y);
     }
-    protected bool CanSeeEnemy(out Attackable a)
+    protected bool CanSeeEnemy(out Attackable a, out GameObject go)
     {
         a = null;
+        go = null;
         RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, sight, enemyMask);
 
         if (h.collider == null) return false;
 
         a = h.collider.GetComponent<Attackable>();
-        
+        go = h.collider.gameObject;
         return a != null;
     }
 
-    protected abstract void Attack(Attackable a);
+    protected abstract void Attack(GameObject go, Attackable a);
 
     protected override void Update() {
         base.Update();
         Attackable a;
-        if (CanSeeEnemy(out a)) {
-            Attack(a);
+        GameObject go;
+        if (CanSeeEnemy(out a, out go)) {
+            Attack(go, a);
         } else
         Move(DirectionIsToLeft);
     }
 
-    public void Damage() {
+    public virtual void Damage(MonoBehaviour damager) {
         Health--;
     }
+    public enum Type { Melee, Ranged, Shield, All}
 }

@@ -3,5 +3,5 @@ using System.Collections;
 
 public interface Attackable  {
 
-    void Damage();
+    void Damage(MonoBehaviour damager);
 }
