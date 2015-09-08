@@ -31,7 +31,7 @@ public class Base : MonoBehaviour {
                 h = h.FindAll(e => e.type == Minion.Type.Shield);
                 break;
         }
-        h.ForEach(e => i += e.minionsPerMinute);
+        h.ForEach(e => i += e.MinionsPerMinute);
         return i;
     }
 

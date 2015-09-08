@@ -172,6 +172,70 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
+--- !u!1 &126247246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 126247247}
+  - 114: {fileID: 126247249}
+  - 61: {fileID: 126247248}
+  m_Layer: 0
+  m_Name: House
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &126247247
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 126247246}
+  m_LocalRotation: {x: 0, y: 0, z: .165047601, w: .986285627}
+  m_LocalPosition: {x: 14.1827784, y: 4.88352203, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1482242802}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!61 &126247248
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 126247246}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .777707398, y: 4.50015068e-06}
+  serializedVersion: 2
+  m_Size: {x: 2.55541134, y: 1}
+--- !u!114 &126247249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 126247246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e229314ec942a7408133e9bf4f441f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {fileID: 1689811425}
+  radius: 15
+  position: 19
+  health: 0
+  minionsPerMinute: 0
+  upgradesLeft: 0
+  directionIsToLeft: 0
+  teamBase: {fileID: 0}
+  type: 0
+  completed: 0
 --- !u!1 &296249764
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5dd4f4a348404449ec226c86061a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchButton: Switch2
+  switchLButton: SwitchL2
+  switchRButton: SwitchR2
   inputs:
   - {fileID: 497074155}
   - {fileID: 697678782}
@@ -240,8 +305,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 497074153}
-  m_LocalRotation: {x: 0, y: 0, z: .953716934, w: .30070582}
-  m_LocalPosition: {x: -6.43601084, y: 8.15950871, z: 11.0876589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.3970165, y: -.616210997, z: 11.0876589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 567182050}
@@ -256,23 +321,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 497074153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0d7644ce0fecc643ad3d054711e027d, type: 3}
+  m_Script: {fileID: 11500000, guid: b59d398c1fcad614499867dbe51d595b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1689811425}
   radius: 15.3000002
-  position: 145
+  position: 0
   force: 5
-  drag: .203999996
+  drag: .200000003
   zoomSpeed: .400000006
   minFOV: 35
   maxFOV: 100
-  leftButton: Left2
-  rightButton: Right2
-  zoomInButton: ZoomIn2
-  zoomOutButton: ZoomIn2
+  horizontalButton: Horizontal2
+  verticalButton: Vertical2
   inUse: 1
   cam: {fileID: 567182049}
+  deadZone: .5
+  Special1: Sp1_2
+  Special2: Sp2_2
+  Special3: Sp3_2
+  Build: BuildMode2
+  attack: Attack2
+  housePrefab: {fileID: 0}
+  team: {fileID: 2091729168}
+  buildmode: 0
 --- !u!1 &567182045
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,12 +662,11 @@ MonoBehaviour:
   zoomSpeed: .400000006
   minFOV: 35
   maxFOV: 100
-  leftButton: Left2
-  rightButton: Right2
-  zoomInButton: ZoomIn2
-  zoomOutButton: ZoomIn2
+  horizontalButton: Horizontal2
+  verticalButton: Vertical2
   inUse: 0
   cam: {fileID: 588860578}
+  deadZone: .5
 --- !u!4 &697678783
 Transform:
   m_ObjectHideFlags: 0
@@ -663,7 +734,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 784781753}
-  m_LocalRotation: {x: .297986776, y: -.145884052, z: .622646153, w: .708684325}
+  m_LocalRotation: {x: .297986805, y: -.145884067, z: .622646213, w: .708684385}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -772,7 +843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5dd4f4a348404449ec226c86061a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchButton: Switch1
+  switchLButton: SwitchL1
+  switchRButton: SwitchR1
   inputs:
   - {fileID: 2049969402}
   - {fileID: 1669710536}
@@ -820,6 +892,66 @@ MonoBehaviour:
   center: {fileID: 1689811425}
   radius: 14.5
   position: 270
+--- !u!1 &1482242799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1482242802}
+  - 33: {fileID: 1482242801}
+  - 23: {fileID: 1482242800}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1482242800
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482242799}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1482242801
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482242799}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1482242802
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482242799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .270000011, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 126247247}
+  m_RootOrder: 0
 --- !u!4 &1624262187 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 60e3d0cd5030a1a428affb1c3591ca48, type: 3}
@@ -859,12 +991,11 @@ MonoBehaviour:
   zoomSpeed: .400000006
   minFOV: 35
   maxFOV: 100
-  leftButton: Left1
-  rightButton: Right1
-  zoomInButton: ZoomIn1
-  zoomOutButton: ZoomOut1
+  horizontalButton: Horizontal1
+  verticalButton: Vertical1
   inUse: 0
   cam: {fileID: 2113060870}
+  deadZone: .5
 --- !u!4 &1669710537
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,31 +1166,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 2049969401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0d7644ce0fecc643ad3d054711e027d, type: 3}
+  m_Script: {fileID: 11500000, guid: b59d398c1fcad614499867dbe51d595b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1689811425}
   radius: 15.3000002
-  position: 116
+  position: 0
   force: 5
-  drag: .203999996
+  drag: .200000003
   zoomSpeed: .400000006
   minFOV: 35
   maxFOV: 100
-  leftButton: Left1
-  rightButton: Right1
-  zoomInButton: ZoomIn1
-  zoomOutButton: ZoomOut1
+  horizontalButton: Horizontal1
+  verticalButton: Vertical1
   inUse: 1
   cam: {fileID: 17257471}
+  deadZone: .5
+  Special1: Sp1_1
+  Special2: Sp2_1
+  Special3: Sp3_1
+  Build: BuildMode1
+  attack: Attack1
+  housePrefab: {fileID: 0}
+  team: {fileID: 2091729168}
+  buildmode: 0
 --- !u!4 &2049969406
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049969401}
-  m_LocalRotation: {x: 0, y: 0, z: .848048091, w: .529919267}
-  m_LocalPosition: {x: -.610062599, y: 13.1353378, z: 11.0876589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.3970165, y: -.616210997, z: 11.0876589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 17257467}
@@ -1136,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2091729166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,10 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2156a9a27990d747a7113707dfef660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  houses:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  houses: []
 --- !u!1 &2113060865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2123535079
 MonoBehaviour:
   m_ObjectHideFlags: 0

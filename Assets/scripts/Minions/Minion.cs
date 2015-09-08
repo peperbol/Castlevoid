@@ -12,9 +12,9 @@ public abstract class Minion : RadialMovement, Attackable
         m.Position = pos;
     }
 
-    public float health;
+    public int health;
 
-    public float Health {
+    public int Health {
         get { return health; }
         set
         { health = value;
@@ -37,7 +37,6 @@ public abstract class Minion : RadialMovement, Attackable
             directionIsToLeft = value;
         }
     }
-    public float walkSpeed = 4;
     private Vector2 V3toV2(Vector3 v) {
         return new Vector2(v.x, v.y);
     }
