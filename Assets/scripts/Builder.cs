@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class Builder : RadialMovementInput, Attackable
 {
@@ -111,6 +112,7 @@ public class Builder : RadialMovementInput, Attackable
     {
         get { return dead; }
         set {
+            GetComponent<Collider2D>().enabled = !value;
             dead = value;
             canMove = !value;
             animator.SetBool("Dead", value);
@@ -122,20 +124,25 @@ public class Builder : RadialMovementInput, Attackable
     public float attackTime = 1;
     public float attackRange;
     public LayerMask attackMask;
+    public float buildTime = 0.7f;
 
     protected void tryAttack() {
         if (ready) StartCoroutine(Attack());
     }
 
-    protected bool CanHitEnemy(out Attackable a)
+    protected bool CanHitEnemy(out List<Attackable> a)
     {
-        a = null;
-        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
+        
+        a = new List<Attackable>();
+        RaycastHit2D[] h = Physics2D.RaycastAll(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
 
-        if (h.collider == null) return false;
+        for (int i = 0; i < h.Length; i++)
+        {
+            if (h[i].collider.GetComponent<Attackable>() != null)
+                a.Add(h[i].collider.GetComponent<Attackable>());
+        }
 
-        a = h.collider.GetComponent<Attackable>();
-        return a != null;
+        return a.Count > 0;
     }
 
     public override bool DirectionIsToLeft
@@ -151,18 +158,31 @@ public class Builder : RadialMovementInput, Attackable
     IEnumerator Attack() {
         animator.SetTrigger("Attack");
         ready = false;
-        yield return new WaitForSeconds(attackTime/2);
-        Attackable a;
+        yield return new WaitForSeconds(attackTime / 8);
+        canMove = false;
+        yield return new WaitForSeconds(attackTime/8 *2);
 
-        if (CanHitEnemy(out a)) a.Damage(this);
+        List<Attackable> a;
+        if (CanHitEnemy(out a)) a.ForEach(e => e.Damage(this));
+        yield return new WaitForSeconds(attackTime / 8 );
+        canMove = true;
         yield return new WaitForSeconds(attackTime / 2);
         ready = true;
     }
 
+    IEnumerator BuildHouse(House prefab)
+    {
+        canMove = false;
+        animator.SetTrigger("Build");
+        House.Build(prefab, team, Position);
+        Preview = Minion.Type.None;
+        yield return new WaitForSeconds(buildTime);
+        canMove = true;
+    }
     protected override void Update()
     {
         base.Update();
-        if (inUse && !Dead)
+        if (inUse && canMove)
         {
             /*
             //Debug.Log(Input.GetAxis(Build));
@@ -180,9 +200,7 @@ public class Builder : RadialMovementInput, Attackable
                 }
                 else if (CanBuild())
                 {
-                    animator.SetTrigger("Build");
-                    House.Build(housePrefab, team, Position);
-                    Preview = Minion.Type.None;
+                    StartCoroutine(BuildHouse(housePrefab));
                 }
 
             }
@@ -195,9 +213,7 @@ public class Builder : RadialMovementInput, Attackable
                 else if (CanBuild())
                 {
 
-                    animator.SetTrigger("Build");
-                    House.Build(wallPrefab, team, Position);
-                    Preview = Minion.Type.None;
+                    StartCoroutine(BuildHouse(wallPrefab));
                 }
             }
             else if (Input.GetButtonDown(Special3))
@@ -208,12 +224,10 @@ public class Builder : RadialMovementInput, Attackable
                 }
                 else if (CanBuild())
                 {
-                    animator.SetTrigger("Build");
-                    House.Build(archerPrefab, team, Position);
-                    Preview = Minion.Type.None;
+                    StartCoroutine(BuildHouse(archerPrefab));
                 }
             }
-            if (Input.GetButton(attack))
+            if (Input.GetButton(attack) )
             {
                 Preview = Minion.Type.None;
                 tryAttack();
@@ -233,14 +247,43 @@ public class Builder : RadialMovementInput, Attackable
                 CurrentPreview[i].materials = mats;
             }
         }
-        animator.SetBool("Walking", speed > 0.05f);
+        animator.SetBool("Walking", Mathf.Abs(speed) > 0.05f);
     }
 
-    public void Damage(MonoBehaviour damager)
+    public Renderer[] visuals;
+    public Material flash;
+    public virtual void Damage(MonoBehaviour damager)
     {
         Health--;
+
+        StartCoroutine(DmgFlash());
+    }
+    List<Material[]> mats = new List<Material[]>();
+    public IEnumerator DmgFlash()
+    {
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            Material[] m = visuals[i].materials;
+
+            for (int j = 0; j < m.Length; j++)
+            {
+                m[j] = flash;
+            }
+            visuals[i].materials = m;
+        }
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i < visuals.Length; i++)
+        {
+
+            visuals[i].materials = mats[i];
+        }
     }
     void Start() {
         Health = startHealth;
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            mats.Add(visuals[i].materials);
+        }
     }
 }

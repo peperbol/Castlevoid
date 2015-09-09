@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class House : RadialPosition, Attackable
 {
@@ -61,16 +62,54 @@ public class House : RadialPosition, Attackable
         teamBase.houses.Remove(this);
     }
 
-    public void Damage(MonoBehaviour damager)
+    public Material flash;
+    public virtual void Damage(MonoBehaviour damager)
     {
         Health--;
+        StartCoroutine(DmgFlash());
+    }
+    List<Material[]> mats = new List<Material[]>();
+    public IEnumerator DmgFlash()
+    {
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            Material[] m = visuals[i].materials;
+
+            for (int j = 0; j < m.Length; j++)
+            {
+                m[j] = flash;
+            }
+            visuals[i].materials = m;
+        }
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i < visuals.Length; i++)
+        {
+
+            visuals[i].materials = mats[i];
+        }
     }
 
     protected virtual void Start() {
+
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            mats.Add(visuals[i].materials);
+        }
         StartCoroutine(Building());
     }
+
+    public float buildTime;
+    public float buildDepht;
     IEnumerator Building() {
-        yield return null;
+        float time = buildTime;
+         Vector3 pos = transform.GetChild(0).position;
+        while (time>0)
+        {
+            time -= Time.deltaTime;
+            transform.GetChild(0).position = Vector3.Lerp(pos , pos - transform.right * buildDepht, time / buildTime);
+            yield return null;
+        }
         completed = true;
     }
 

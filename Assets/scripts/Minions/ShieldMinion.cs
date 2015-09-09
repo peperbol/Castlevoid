@@ -12,6 +12,8 @@ public class ShieldMinion : Minion {
         animator.SetTrigger("Dmg");
         if (damager is Projectile) return;
         Health--;
+
+        StartCoroutine(DmgFlash());
     }
     
 }

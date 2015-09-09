@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public abstract class Minion : RadialMovement, Attackable
 {
@@ -87,10 +88,42 @@ public abstract class Minion : RadialMovement, Attackable
                 Move(DirectionIsToLeft);
         }
     }
-
+    public Renderer[] visuals;
+    public Material flash;
     public virtual void Damage(MonoBehaviour damager)
     {
         Health--;
+
+        StartCoroutine(DmgFlash());
     }
+
+    List<Material[]> mats = new List<Material[]>();
+    public IEnumerator DmgFlash() {
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            Material[] m = visuals[i].materials;
+
+            for (int j = 0; j < m.Length; j++)
+            {
+                m[j] = flash;
+            }
+            visuals[i].materials = m;
+        }
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i < visuals.Length; i++)
+        {
+
+            visuals[i].materials = mats[i];
+        }
+    }
+    void Start() {
+
+        for (int i = 0; i < visuals.Length; i++)
+        {
+            mats.Add(visuals[i].materials);
+        }
+    }
+
     public enum Type { Melee, Ranged, Shield, None }
 }

@@ -672,20 +672,36 @@ MonoBehaviour:
   radius: 15
   position: 173
   health: 10
-  visuals: []
+  visuals:
+  - {fileID: 2302684}
   minionsPerMinute: 1
   upgradesLeft: 0
   directionIsToLeft: 1
   teamBase: {fileID: 0}
   type: 1
   completed: 1
+  flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
+  buildTime: .600000024
+  buildDepht: 2.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: buildTime
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buildDepht
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104792}

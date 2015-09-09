@@ -225,6 +225,10 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 4352
+  visuals:
+  - {fileID: 13740312}
+  - {fileID: 13772478}
+  flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
 --- !u!137 &13740312
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -322,6 +326,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.52471805
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167782}
