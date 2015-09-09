@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     public float timeToLive = 7;
     public float steerForce = 1;
     public Transform target;
+    public AudioClip hitSound;
     Rigidbody2D rb;
     // Use this for initialization
     void Start()
@@ -42,6 +43,7 @@ public class Projectile : MonoBehaviour
         if (a != null) {
             a.Damage(this);
             Destroy(gameObject);
+            AudioPlay.PlaySound(hitSound, 0.05f);
         }
     }
 }

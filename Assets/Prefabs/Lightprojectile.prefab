@@ -106,6 +106,7 @@ MonoBehaviour:
   timeToLive: 7
   steerForce: 40000
   target: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 130685f45e52edf4894e8e99031138da, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -125,6 +126,10 @@ Prefab:
       propertyPath: m_LinearDrag
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 130685f45e52edf4894e8e99031138da, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103532}

@@ -18,7 +18,7 @@ public class House : RadialPosition, Attackable
 
     }
     public float resourcesCost;
-
+    public AudioClip buildSound;
     public int health;
     public Renderer[] visuals;
     public int Health
@@ -104,6 +104,7 @@ public class House : RadialPosition, Attackable
     public float buildTime;
     public float buildDepht;
     IEnumerator Building() {
+        AudioPlay.PlaySound(buildSound);
         float time = buildTime;
          Vector3 pos = transform.GetChild(0).position;
         while (time>0)

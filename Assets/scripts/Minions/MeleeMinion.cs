@@ -7,6 +7,7 @@ public class MeleeMinion : Minion
     public float timePerAttack;
     private bool ready = true;
     bool attacking;
+    public AudioClip attackSound;
     public bool Attacking
     {
         get
@@ -25,6 +26,7 @@ public class MeleeMinion : Minion
         if (ready)
         {
             StartCoroutine(Wait(a));
+  
         }
     }
 
@@ -33,6 +35,7 @@ public class MeleeMinion : Minion
         Attacking = true;
         ready = false;
         yield return new WaitForSeconds(timePerAttack / 2);
+        AudioPlay. PlaySound(attackSound);
         if (a != null)
             a.Damage(this);
         Attacking = false;

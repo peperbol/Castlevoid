@@ -392,7 +392,8 @@ MonoBehaviour:
   center: {fileID: 0}
   radius: 15
   position: 173
-  resourcesCost: 6
+  resourcesCost: 5
+  buildSound: {fileID: 8300000, guid: 35907bc2d642a0447acf954da2df5a72, type: 3}
   health: 25
   visuals:
   - {fileID: 2354536}
@@ -438,8 +439,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: resourcesCost
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buildSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 35907bc2d642a0447acf954da2df5a72, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117020}
