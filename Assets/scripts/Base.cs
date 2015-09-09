@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Base : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Base : MonoBehaviour
         }
     }
     public float buildDepth;
+    public GameObject endOverlay;
+    public GameObject endMenu;
     IEnumerator Destroy()
     {
         
@@ -38,6 +41,13 @@ public class Base : MonoBehaviour
             transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepth , pos, time / timeToDie);
             yield return null;
         }
+        endOverlay.SetActive(true);
+        Builder[] b = FindObjectsOfType<Builder>();
+        for (int i = 0; i < b.Length; i++)
+        {
+            b[i].CanMove = false;
+        }
+        endMenu.SetActive(true);
         Destroy(gameObject);
     }
 

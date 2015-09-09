@@ -14,7 +14,7 @@ public class RadialMovementInput : RadialMovement {
     public float deadZone = 0.2f;
     private float zoomVal;
     protected bool directionIsToLeft;
-    protected bool CanMove {
+    public bool CanMove {
         get { return canMoveLevel <= 0; }
         set { canMoveLevel += (value)?-1:1; }
     }
