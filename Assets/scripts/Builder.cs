@@ -165,14 +165,23 @@ public class Builder : RadialMovementInput, Attackable
 
         return a.Count > 0;
     }
-
+    public Transform[] flipIgnore;
     public override bool DirectionIsToLeft
     {
         get { return directionIsToLeft; }
         set
         {
             if (directionIsToLeft != value)
+            {
                 transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+
+                for (int i = 0; i < flipIgnore.Length; i++)
+                {
+                    flipIgnore[i].localScale = new Vector3(flipIgnore[i].localScale.x, -flipIgnore[i].localScale.y, flipIgnore[i].localScale.z);
+                }
+                
+            }
+
             directionIsToLeft = value;
         }
     }
