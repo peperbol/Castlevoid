@@ -5,7 +5,7 @@ public class RadialMovement : RadialPosition {
     public float force = 1;
     [Range(0,1)]
     public float drag ;
-    private float speed;
+    protected float speed;
     public void Move(bool toLeft) {
         speed += ((toLeft)?1:-1) * force;
     }

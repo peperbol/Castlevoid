@@ -12,6 +12,9 @@ ModelImporter:
     100008: //RootNode
     100010: transform86
     100012: transform87
+    100014: pCube169
+    100016: transform97
+    100018: transform98
     400000: pCube150
     400002: pCube151
     400004: pCube152
@@ -19,12 +22,18 @@ ModelImporter:
     400008: //RootNode
     400010: transform86
     400012: transform87
+    400014: pCube169
+    400016: transform97
+    400018: transform98
     2300000: pCube151
     2300002: pCube163
+    2300004: pCube169
     3300000: pCube151
     3300002: pCube163
+    3300004: pCube169
     4300000: pCube151
     4300002: pCube163
+    4300004: pCube169
     9500000: //RootNode
   materials:
     importMaterials: 1

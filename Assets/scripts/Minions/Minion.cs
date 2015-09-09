@@ -32,7 +32,6 @@ public abstract class Minion : RadialMovement, Attackable
     }
     protected virtual IEnumerator Die()
     {
-        Debug.Log(1);
         dead = true;
         Destroy(GetComponent<Collider2D>());
         animator.SetTrigger("Die");

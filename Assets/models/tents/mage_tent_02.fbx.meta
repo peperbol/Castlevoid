@@ -19,6 +19,12 @@ ModelImporter:
     100022: transform89
     100024: transform90
     100026: transform91
+    100028: pCube168
+    100030: transform92
+    100032: transform93
+    100034: transform94
+    100036: transform95
+    100038: transform96
     400000: //RootNode
     400002: pCube157
     400004: pCube158
@@ -33,21 +39,30 @@ ModelImporter:
     400022: transform89
     400024: transform90
     400026: transform91
+    400028: pCube168
+    400030: transform92
+    400032: transform93
+    400034: transform94
+    400036: transform95
+    400038: transform96
     2300000: pCube158
     2300002: pCube164
     2300004: pCube165
     2300006: pCube166
     2300008: pCube167
+    2300010: pCube168
     3300000: pCube158
     3300002: pCube164
     3300004: pCube165
     3300006: pCube166
     3300008: pCube167
+    3300010: pCube168
     4300000: pCube158
     4300002: pCube164
     4300004: pCube165
     4300006: pCube166
     4300008: pCube167
+    4300010: pCube168
     9500000: //RootNode
   materials:
     importMaterials: 1

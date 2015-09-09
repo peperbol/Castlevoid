@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class Builder : RadialMovementInput
+public class Builder : RadialMovementInput, Attackable
 {
     public string Special1;
     public string Special2;
@@ -39,6 +40,8 @@ public class Builder : RadialMovementInput
             preview = value;
         }
     }
+
+    public Animator animator;
 
     public Renderer[] buildHouseVisual;
     public Renderer[] buildWallVisual;
@@ -78,10 +81,88 @@ public class Builder : RadialMovementInput
     {
         return Physics2D.OverlapCircle(transform.position, buildSpace, BuildObstruction) == null;
     }
+    private int health;
+    public int startHealth;
+    public int Health
+    {
+        get { return health; }
+        set
+        {
+            health = value;
+
+            if (health <= 0)
+            {
+                //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+                StartCoroutine(Die());
+            }
+        }
+    }
+
+    IEnumerator Die()
+    {
+        Dead = true;
+        yield return new WaitForSeconds(deadTime);
+        Dead = false;
+        Position = (team.isLight) ? 270 : 90;
+        Health = startHealth;
+    }
+    private bool dead;
+    private bool Dead
+    {
+        get { return dead; }
+        set {
+            dead = value;
+            canMove = !value;
+            animator.SetBool("Dead", value);
+
+       }
+    }
+    public float deadTime = 2.5f;
+    private bool ready = true;
+    public float attackTime = 1;
+    public float attackRange;
+    public LayerMask attackMask;
+
+    protected void tryAttack() {
+        if (ready) StartCoroutine(Attack());
+    }
+
+    protected bool CanHitEnemy(out Attackable a)
+    {
+        a = null;
+        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
+
+        if (h.collider == null) return false;
+
+        a = h.collider.GetComponent<Attackable>();
+        return a != null;
+    }
+
+    public override bool DirectionIsToLeft
+    {
+        get { return directionIsToLeft; }
+        set
+        {
+            if (directionIsToLeft != value)
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            directionIsToLeft = value;
+        }
+    }
+    IEnumerator Attack() {
+        animator.SetTrigger("Attack");
+        ready = false;
+        yield return new WaitForSeconds(attackTime/2);
+        Attackable a;
+
+        if (CanHitEnemy(out a)) a.Damage(this);
+        yield return new WaitForSeconds(attackTime / 2);
+        ready = true;
+    }
+
     protected override void Update()
     {
         base.Update();
-        if (inUse)
+        if (inUse && !Dead)
         {
             /*
             //Debug.Log(Input.GetAxis(Build));
@@ -99,6 +180,7 @@ public class Builder : RadialMovementInput
                 }
                 else if (CanBuild())
                 {
+                    animator.SetTrigger("Build");
                     House.Build(housePrefab, team, Position);
                     Preview = Minion.Type.None;
                 }
@@ -112,6 +194,8 @@ public class Builder : RadialMovementInput
                 }
                 else if (CanBuild())
                 {
+
+                    animator.SetTrigger("Build");
                     House.Build(wallPrefab, team, Position);
                     Preview = Minion.Type.None;
                 }
@@ -124,13 +208,15 @@ public class Builder : RadialMovementInput
                 }
                 else if (CanBuild())
                 {
+                    animator.SetTrigger("Build");
                     House.Build(archerPrefab, team, Position);
                     Preview = Minion.Type.None;
                 }
             }
-            if (Input.GetButtonDown(attack))
+            if (Input.GetButton(attack))
             {
                 Preview = Minion.Type.None;
+                tryAttack();
             }
         }
 
@@ -147,5 +233,14 @@ public class Builder : RadialMovementInput
                 CurrentPreview[i].materials = mats;
             }
         }
+        animator.SetBool("Walking", speed > 0.05f);
+    }
+
+    public void Damage(MonoBehaviour damager)
+    {
+        Health--;
+    }
+    void Start() {
+        Health = startHealth;
     }
 }

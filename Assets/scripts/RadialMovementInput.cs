@@ -13,6 +13,17 @@ public class RadialMovementInput : RadialMovement {
     [Range(0,1)]
     public float deadZone = 0.2f;
     private float zoomVal;
+    protected bool directionIsToLeft;
+    protected bool canMove = true;
+    public virtual bool DirectionIsToLeft
+    {
+        get { return directionIsToLeft; }
+        set
+        {
+            directionIsToLeft = value;
+        }
+    }
+
     protected override void Update() {
         base.Update();
         if (inUse) {
@@ -21,10 +32,10 @@ public class RadialMovementInput : RadialMovement {
             if (Input.GetButton(leftButton)) i--;
             if (Input.GetButton(rightButton)) i++;
             */
-            if (Mathf.Abs(i) > deadZone)
+            if (canMove && Mathf.Abs(i) > deadZone)
             {
-                if (i > 0) { Move(false); }
-                else if (i < 0) { Move(true); }
+                if (i > 0) { Move(false); DirectionIsToLeft = false; }
+                else if (i < 0) { Move(true); DirectionIsToLeft = true; }
             }
 
             i = Input.GetAxis(verticalButton);
