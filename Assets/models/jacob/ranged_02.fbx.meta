@@ -19,7 +19,7 @@ ModelImporter:
     400010: //RootNode
     4300000: pCube1
     4300002: pasted__pCube1
-    7400000: Move
+    7400000: Walk
     7400002: Attack
     7400004: Die
     9500000: //RootNode
@@ -46,7 +46,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Move
+      name: Walk
       takeName: Take 001
       firstFrame: 1
       lastFrame: 79

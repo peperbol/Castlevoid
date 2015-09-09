@@ -179,8 +179,8 @@ public class Builder : RadialMovementInput, Attackable
     IEnumerator Attack() {
         animator.SetTrigger("Attack");
         ready = false;
-        yield return new WaitForSeconds(attackTime / 8);
         AudioPlay.PlaySound(attackSound);
+        yield return new WaitForSeconds(attackTime / 8);
         canMove = false;
         yield return new WaitForSeconds(attackTime/8 *2);
 

@@ -247,7 +247,7 @@ MonoBehaviour:
   force: 1
   drag: .200000003
   health: 3
-  animator: {fileID: 0}
+  animator: {fileID: 9599738}
   timeToDie: 1.5
   sight: 25
   enemyMask:
@@ -270,7 +270,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -307,7 +307,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

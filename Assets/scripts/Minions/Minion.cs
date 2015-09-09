@@ -72,7 +72,7 @@ public abstract class Minion : RadialMovement, Attackable
 
     protected abstract void Attack(GameObject go, Attackable a);
 
-    bool dead = false;
+    public bool dead = false;
 
     protected override void Update()
     {

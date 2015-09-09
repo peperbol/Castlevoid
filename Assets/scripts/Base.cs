@@ -12,7 +12,6 @@ public class Base : MonoBehaviour
 
     public int health;
     public float timeToDie;
-
     public int Health
     {
         get { return health; }
