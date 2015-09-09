@@ -43,6 +43,8 @@ public class Builder : RadialMovementInput, Attackable
     }
 
     public Animator animator;
+    public AudioClip attackSound;
+    public AudioClip hitSound;
 
     public Renderer[] buildHouseVisual;
     public Renderer[] buildWallVisual;
@@ -147,7 +149,7 @@ public class Builder : RadialMovementInput, Attackable
         
         a = new List<Attackable>();
         RaycastHit2D[] h = Physics2D.RaycastAll(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
-
+        
         for (int i = 0; i < h.Length; i++)
         {
             if (h[i].collider.GetComponent<Attackable>() != null)
@@ -171,11 +173,15 @@ public class Builder : RadialMovementInput, Attackable
         animator.SetTrigger("Attack");
         ready = false;
         yield return new WaitForSeconds(attackTime / 8);
+        AudioPlay.PlaySound(attackSound);
         canMove = false;
         yield return new WaitForSeconds(attackTime/8 *2);
 
         List<Attackable> a;
-        if (CanHitEnemy(out a)) a.ForEach(e => e.Damage(this));
+        if (CanHitEnemy(out a)) {
+            a.ForEach(e => e.Damage(this));
+            AudioPlay.PlaySound(hitSound);
+        }
         yield return new WaitForSeconds(attackTime / 8 );
         canMove = true;
         yield return new WaitForSeconds(attackTime / 2);

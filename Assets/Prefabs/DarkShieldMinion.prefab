@@ -220,11 +220,15 @@ MonoBehaviour:
   drag: .200000003
   health: 10
   animator: {fileID: 9591144}
-  timeToDie: 0
+  timeToDie: 1.5
   sight: .5
   enemyMask:
     serializedVersion: 2
     m_Bits: 4352
+  visuals:
+  - {fileID: 13740312}
+  - {fileID: 13772478}
+  flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
 --- !u!137 &13740312
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -321,6 +325,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.x
       value: 1.52471805
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: timeToDie
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

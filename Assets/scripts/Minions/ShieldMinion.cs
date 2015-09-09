@@ -5,7 +5,6 @@ using System;
 public class ShieldMinion : Minion {
     protected override void Attack(GameObject go, Attackable a)
     {
-        Debug.Log(2);
     }
     public override void Damage(MonoBehaviour damager)
     {
