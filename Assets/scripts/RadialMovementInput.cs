@@ -14,7 +14,12 @@ public class RadialMovementInput : RadialMovement {
     public float deadZone = 0.2f;
     private float zoomVal;
     protected bool directionIsToLeft;
-    protected bool canMove = true;
+    protected bool CanMove {
+        get { return canMoveLevel <= 0; }
+        set { canMoveLevel += (value)?-1:1; }
+    }
+    private int canMoveLevel;
+
     public virtual bool DirectionIsToLeft
     {
         get { return directionIsToLeft; }
@@ -32,7 +37,7 @@ public class RadialMovementInput : RadialMovement {
             if (Input.GetButton(leftButton)) i--;
             if (Input.GetButton(rightButton)) i++;
             */
-            if (canMove && Mathf.Abs(i) > deadZone)
+            if (CanMove && Mathf.Abs(i) > deadZone)
             {
                 if (i > 0) { Move(false); DirectionIsToLeft = false; }
                 else if (i < 0) { Move(true); DirectionIsToLeft = true; }

@@ -50,7 +50,7 @@ public class Base : MonoBehaviour
         }
     }
 
-    public float GetHousesCount(Minion.Type t = Minion.Type.None)
+    public int GetHousesCount(Minion.Type t = Minion.Type.None)
     {
 
         List<House> h = houses;

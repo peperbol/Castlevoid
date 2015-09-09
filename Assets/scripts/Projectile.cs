@@ -31,7 +31,6 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Debug.Log(3);
         Vector2 dir = ((Vector2)(target.position - transform.position));
         float d = dir.sqrMagnitude;
         dir = dir.normalized * steerForce;

@@ -135,7 +135,7 @@ public class Builder : RadialMovementInput, Attackable
         set {
             GetComponent<Collider2D>().enabled = !value;
             dead = value;
-            canMove = !value;
+            CanMove = !value;
             animator.SetBool("Dead", value);
 
        }
@@ -177,38 +177,38 @@ public class Builder : RadialMovementInput, Attackable
         }
     }
     IEnumerator Attack() {
-        animator.SetTrigger("Attack");
+        animator.SetBool("Attack", true);
         ready = false;
         AudioPlay.PlaySound(attackSound);
-        yield return new WaitForSeconds(attackTime / 8);
-        canMove = false;
-        yield return new WaitForSeconds(attackTime/8 *2);
+        CanMove = false;
+        yield return new WaitForSeconds(attackTime/8 *3);
 
         List<Attackable> a;
         if (CanHitEnemy(out a)) {
             a.ForEach(e => e.Damage(this));
             AudioPlay.PlaySound(hitSound);
         }
-        yield return new WaitForSeconds(attackTime / 8 );
-        canMove = true;
-        yield return new WaitForSeconds(attackTime / 2);
+        animator.SetBool("Attack", false);
+        yield return new WaitForSeconds(attackTime / 8  *2 );
+        CanMove = true;
+        yield return new WaitForSeconds(attackTime / 8 * 2);
         ready = true;
     }
 
     IEnumerator BuildHouse(House prefab)
     {
-        canMove = false;
+        CanMove = false;
         animator.SetTrigger("Build");
         House.Build(prefab, team, Position);
         Resources -= prefab.resourcesCost;
         Preview = Minion.Type.None;
         yield return new WaitForSeconds(buildTime);
-        canMove = true;
+        CanMove = true;
     }
     protected override void Update()
     {
         base.Update();
-        if (inUse && canMove)
+        if (inUse && CanMove)
         {
             /*
             //Debug.Log(Input.GetAxis(Build));
