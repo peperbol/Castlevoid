@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class Builder : RadialMovementInput, Attackable;
+public class Builder : RadialMovementInput, Attackable
 {
     public string Special1;
     public string Special2;
@@ -82,7 +82,7 @@ public class Builder : RadialMovementInput, Attackable;
     public float Resources
     {
         get { return resources; }
-        set { resources = Mathf.Min(0, value); }
+        set { resources = Mathf.Max(0, value); }
     }
     public float resourcesPerHit;
 
@@ -187,6 +187,7 @@ public class Builder : RadialMovementInput, Attackable;
         canMove = false;
         animator.SetTrigger("Build");
         House.Build(prefab, team, Position);
+        Resources -= prefab.resourcesCost;
         Preview = Minion.Type.None;
         yield return new WaitForSeconds(buildTime);
         canMove = true;
@@ -208,7 +209,8 @@ public class Builder : RadialMovementInput, Attackable;
                 if (Preview != Minion.Type.Melee)
                 {
 
-                    Preview = Minion.Type.Melee;
+                    if (housePrefab.resourcesCost <= Resources)
+                        Preview = Minion.Type.Melee;
                 }
                 else if (CanBuild())
                 {
@@ -220,7 +222,8 @@ public class Builder : RadialMovementInput, Attackable;
             {
                 if (Preview != Minion.Type.Shield)
                 {
-                    Preview = Minion.Type.Shield;
+                    if (wallPrefab.resourcesCost <= Resources)
+                        Preview = Minion.Type.Shield;
                 }
                 else if (CanBuild())
                 {
@@ -232,7 +235,8 @@ public class Builder : RadialMovementInput, Attackable;
             {
                 if (Preview != Minion.Type.Ranged)
                 {
-                    Preview = Minion.Type.Ranged;
+                    if (archerPrefab.resourcesCost <= Resources)
+                        Preview = Minion.Type.Ranged;
                 }
                 else if (CanBuild())
                 {
@@ -268,6 +272,10 @@ public class Builder : RadialMovementInput, Attackable;
     {
         Health--;
 
+        if (damager is Builder)
+        {
+            ((Builder)damager).Loot();
+        }
         StartCoroutine(DmgFlash());
     }
     List<Material[]> mats = new List<Material[]>();

@@ -561,6 +561,7 @@ MonoBehaviour:
   center: {fileID: 0}
   radius: 15
   position: 19
+  resourcesCost: 6
   health: 6
   visuals:
   - {fileID: 2398466}
@@ -603,6 +604,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: buildDepht
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: resourcesCost
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
