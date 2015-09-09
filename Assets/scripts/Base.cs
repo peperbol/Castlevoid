@@ -83,6 +83,9 @@ public class Base : MonoBehaviour
     }
     void Start() {
         Health = MaxHealth;
+        Debug.Log(KeyCode.Slash.ToString());
+        Debug.Log(KeyCode.Greater.ToString());
+        Debug.Log(KeyCode.Less.ToString());
     }
 
 }
