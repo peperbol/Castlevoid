@@ -14,7 +14,6 @@ public class House : RadialPosition, Attackable
         h.Position = position;
         h.teamBase = team;
         h.DirectionIsToLeft = !(team.isLight) == (position < 270 && position > 90);
-        team.houses.Add(h);
 
     }
     public int resourcesCost;
