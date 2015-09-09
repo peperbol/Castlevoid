@@ -253,6 +253,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 8704
+  dead: 0
   visuals:
   - {fileID: 13764100}
   - {fileID: 13778008}
@@ -270,7 +271,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -307,7 +308,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 60649339dad626948aa99aec50f0180a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

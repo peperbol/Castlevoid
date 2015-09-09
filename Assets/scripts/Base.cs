@@ -10,7 +10,8 @@ public class Base : MonoBehaviour
     public Minion shield;
     public bool isLight;
 
-    public int health;
+    public int MaxHealth;
+    private int health;
     public float timeToDie;
     public int Health
     {
@@ -69,6 +70,9 @@ public class Base : MonoBehaviour
                 break;
         }
         return h.Count;
+    }
+    void Start() {
+        Health = MaxHealth;
     }
 
 }
