@@ -17,7 +17,7 @@ public class House : RadialPosition, Attackable
         team.houses.Add(h);
 
     }
-    public float resourcesCost;
+    public int resourcesCost;
     public AudioClip buildSound;
     public int health;
     public Renderer[] visuals;
@@ -30,8 +30,7 @@ public class House : RadialPosition, Attackable
 
             if (health <= 0)
             {
-                //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-                GameObject.Destroy(gameObject);
+                StartCoroutine(Destroy());
             }
         }
     }
@@ -114,6 +113,23 @@ public class House : RadialPosition, Attackable
             yield return null;
         }
         completed = true;
+        teamBase.houses.Add(this);
+    }
+
+    IEnumerator Destroy() {
+        completed = false;
+
+        AudioPlay.PlaySound(buildSound);
+        float time = buildTime;
+        Vector3 pos = transform.GetChild(0).position;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepht, pos , time / buildTime);
+            yield return null;
+        }
+        Destroy(gameObject);
+        teamBase.houses.Remove(this);
     }
 
     public void Spawn()

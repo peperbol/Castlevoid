@@ -3,6 +3,8 @@ using System.Collections;
 using System;
 
 public class ShieldMinion : Minion {
+
+    //public AudioClip dmgHit;
     protected override void Attack(GameObject go, Attackable a)
     {
     }
@@ -11,6 +13,7 @@ public class ShieldMinion : Minion {
         animator.SetTrigger("Dmg");
         if (damager is Projectile) return;
         Health--;
+        
 
         StartCoroutine(DmgFlash());
     }

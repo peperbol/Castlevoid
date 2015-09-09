@@ -2,25 +2,60 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Base : MonoBehaviour {
+public class Base : MonoBehaviour
+{
     public List<House> houses = new List<House>();
     public Minion melee;
     public Minion ranged;
     public Minion shield;
     public bool isLight;
-    public float GetMinionsPerMinute(int direction = 0, Minion.Type t = Minion.Type.None) {
 
-        float i = 0;
+    public int health;
+    public float timeToDie;
+
+    public int Health
+    {
+        get { return health; }
+        set
+        {
+            health = value;
+
+            if (health <= 0)
+            {
+                StartCoroutine(Destroy());
+            }
+        }
+    }
+    public float buildDepth;
+    IEnumerator Destroy()
+    {
+        
+        float time = timeToDie;
+        Vector3 pos = transform.GetChild(0).position;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepth , pos, time / timeToDie);
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        Minion m = c.GetComponent<Minion>();
+        if (m != null)
+        {
+            Health--;
+            Destroy(m.gameObject);
+        }
+    }
+
+    public float GetHousesCount(Minion.Type t = Minion.Type.None)
+    {
+
         List<House> h = houses;
 
-        if (direction < 0)
-        {
-            h = h.FindAll(e => e.directionIsToLeft);
-        }
-        else if (direction > 0)
-        {
-            h = h.FindAll(e => !e.directionIsToLeft);
-        }
 
         switch (t)
         {
@@ -34,10 +69,7 @@ public class Base : MonoBehaviour {
                 h = h.FindAll(e => e.type == Minion.Type.Shield);
                 break;
         }
-        h.ForEach(e => i += e.MinionsPerMinute);
-        return i;
+        return h.Count;
     }
 
-    public bool isLeftTheWeakest { get { return GetMinionsPerMinute(-1) < GetMinionsPerMinute(1); } }
-    
 }

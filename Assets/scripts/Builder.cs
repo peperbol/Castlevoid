@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Builder : RadialMovementInput, Attackable
 {
@@ -45,6 +46,7 @@ public class Builder : RadialMovementInput, Attackable
     public Animator animator;
     public AudioClip attackSound;
     public AudioClip hitSound;
+    public AudioClip respawnSound;
 
     public Renderer[] buildHouseVisual;
     public Renderer[] buildWallVisual;
@@ -80,13 +82,17 @@ public class Builder : RadialMovementInput, Attackable
     public Material buildPositive;
     public Material buildNegative;
 
-    public float resources;
-    public float Resources
+    public int resources;
+    public Text ResourcesDisplay;
+    public int Resources
     {
         get { return resources; }
-        set { resources = Mathf.Max(0, value); }
+        set {
+            resources = Mathf.Max(0, value);
+            ResourcesDisplay.text = resources.ToString();
+        }
     }
-    public float resourcesPerHit;
+    public int resourcesPerHit;
 
     public void Loot() {
         Resources += resourcesPerHit;
@@ -120,6 +126,7 @@ public class Builder : RadialMovementInput, Attackable
         Dead = false;
         Position = (team.isLight) ? 270 : 90;
         Health = startHealth;
+        AudioPlay.PlaySound(respawnSound, 0.5f);
     }
     private bool dead;
     private bool Dead
