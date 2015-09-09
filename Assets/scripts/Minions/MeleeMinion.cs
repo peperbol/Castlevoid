@@ -2,15 +2,19 @@
 using System.Collections;
 using System;
 
-public class MeleeMinion : Minion {
+public class MeleeMinion : Minion
+{
     public float timePerAttack;
     private bool ready = true;
     bool attacking;
-    public bool Attacking {
-        get {
+    public bool Attacking
+    {
+        get
+        {
             return attacking;
         }
-        set {
+        set
+        {
             attacking = value;
             animator.SetBool("attacking", value);
         }
@@ -18,25 +22,22 @@ public class MeleeMinion : Minion {
     protected override void Attack(GameObject go, Attackable a)
     {
 
-        if (ready) {
+        if (ready)
+        {
             StartCoroutine(Wait(a));
         }
     }
 
-    IEnumerator Wait(Attackable a) {
+    IEnumerator Wait(Attackable a)
+    {
         Attacking = true;
         ready = false;
         yield return new WaitForSeconds(timePerAttack / 2);
-        if(a!= null)
-        a.Damage(this);
+        if (a != null)
+            a.Damage(this);
         Attacking = false;
-        yield return new WaitForSeconds(timePerAttack/2);
+        yield return new WaitForSeconds(timePerAttack / 2);
         ready = true;
     }
 
-    protected override IEnumerator Die()
-    {
-        //animator.;
-        yield return null;
-    }
 }
