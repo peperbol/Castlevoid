@@ -33,6 +33,7 @@ public abstract class Minion : RadialMovement, Attackable
     }
     protected virtual IEnumerator Die()
     {
+
         dead = true;
         Destroy(GetComponent<Collider2D>());
         animator.SetTrigger("Die");
@@ -93,6 +94,9 @@ public abstract class Minion : RadialMovement, Attackable
     public virtual void Damage(MonoBehaviour damager)
     {
         Health--;
+        if (damager is Builder) {
+            ((Builder)damager).Loot();
+        }
 
         StartCoroutine(DmgFlash());
     }

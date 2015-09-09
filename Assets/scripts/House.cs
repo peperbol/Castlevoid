@@ -17,6 +17,8 @@ public class House : RadialPosition, Attackable
         team.houses.Add(h);
 
     }
+    public float resourcesCost;
+
     public int health;
     public Renderer[] visuals;
     public int Health

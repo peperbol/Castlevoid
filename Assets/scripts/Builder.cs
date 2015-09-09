@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class Builder : RadialMovementInput, Attackable
+public class Builder : RadialMovementInput, Attackable;
 {
     public string Special1;
     public string Special2;
@@ -77,6 +77,18 @@ public class Builder : RadialMovementInput, Attackable
     }
     public Material buildPositive;
     public Material buildNegative;
+
+    public float resources;
+    public float Resources
+    {
+        get { return resources; }
+        set { resources = Mathf.Min(0, value); }
+    }
+    public float resourcesPerHit;
+
+    public void Loot() {
+        Resources += resourcesPerHit;
+    }
 
     protected bool CanBuild()
     {
