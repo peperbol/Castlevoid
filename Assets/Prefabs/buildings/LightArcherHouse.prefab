@@ -587,7 +587,7 @@ Transform:
   m_GameObject: {fileID: 158680}
   m_LocalRotation: {x: 0, y: 0, z: .998134851, w: .0610485114}
   m_LocalPosition: {x: -14.8881922, y: 1.82803917, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 415830}
   m_Father: {fileID: 0}
@@ -676,7 +676,7 @@ MonoBehaviour:
   health: 10
   visuals:
   - {fileID: 2325882}
-  minionsPerMinute: 1
+  minionsPerMinute: 1.5
   upgradesLeft: 0
   directionIsToLeft: 1
   teamBase: {fileID: 0}
@@ -694,15 +694,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: type
@@ -728,6 +728,10 @@ Prefab:
       propertyPath: buildSound
       value: 
       objectReference: {fileID: 8300000, guid: 35907bc2d642a0447acf954da2df5a72, type: 3}
+    - target: {fileID: 0}
+      propertyPath: minionsPerMinute
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158680}

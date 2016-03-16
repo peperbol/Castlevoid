@@ -32,7 +32,6 @@ public class Base : MonoBehaviour
     public GameObject endMenu;
     IEnumerator Destroy()
     {
-        
         float time = timeToDie;
         Vector3 pos = transform.GetChild(0).position;
         while (time > 0)
@@ -83,9 +82,6 @@ public class Base : MonoBehaviour
     }
     void Start() {
         Health = MaxHealth;
-        Debug.Log(KeyCode.Slash.ToString());
-        Debug.Log(KeyCode.Greater.ToString());
-        Debug.Log(KeyCode.Less.ToString());
     }
 
 }

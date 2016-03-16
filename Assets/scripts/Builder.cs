@@ -322,6 +322,7 @@ public class Builder : RadialMovementInput, Attackable
         }
     }
     void Start() {
+        if (!Application.isPlaying) return;
         Health = startHealth;
         for (int i = 0; i < visuals.Length; i++)
         {
