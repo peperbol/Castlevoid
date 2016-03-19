@@ -214,9 +214,27 @@ public class Builder : RadialMovementInput, Attackable
         yield return new WaitForSeconds(buildTime);
         CanMove = true;
     }
+
+    private float yScale;
+    private float xScale;
+    public float speedYScaling;
+    public float speedXScaling;
+    public Transform scewObject;
+
+    private Color resourcesColor;
+    private int resourcesSize;
+    public float warnResourcesTimer = 0;
+    public float warnResourcesDuration= 0.2f;
+    public float warnResourcesAnimationSpeed = 0.5f;
+    public Color warnResourcesColor = Color.red;
+    public int warnResourcesSize;
+
+    public AudioClip ErrorSound;
+
     protected override void Update()
     {
         base.Update();
+        if (!Application.isPlaying) return;
         if (inUse && CanMove)
         {
             /*
@@ -232,7 +250,13 @@ public class Builder : RadialMovementInput, Attackable
                 {
 
                     if (housePrefab.resourcesCost <= Resources)
+                    {
                         Preview = Minion.Type.Melee;
+                    }
+                    else
+                    {
+                        WarnResources();
+                    }
                 }
                 else if (CanBuild())
                 {
@@ -245,7 +269,13 @@ public class Builder : RadialMovementInput, Attackable
                 if (Preview != Minion.Type.Shield)
                 {
                     if (wallPrefab.resourcesCost <= Resources)
+                    {
                         Preview = Minion.Type.Shield;
+                    }
+                    else
+                    {
+                        WarnResources();
+                    }
                 }
                 else if (CanBuild())
                 {
@@ -258,7 +288,13 @@ public class Builder : RadialMovementInput, Attackable
                 if (Preview != Minion.Type.Ranged)
                 {
                     if (archerPrefab.resourcesCost <= Resources)
+                    {
                         Preview = Minion.Type.Ranged;
+                    }
+                    else
+                    {
+                        WarnResources();
+                    }
                 }
                 else if (CanBuild())
                 {
@@ -286,6 +322,30 @@ public class Builder : RadialMovementInput, Attackable
             }
         }
         animator.SetBool("Walking", Mathf.Abs(speed) > 0.05f);
+       
+        Vector3 v = scewObject.localScale;
+        v.y = yScale * (1 + speedYScaling * Mathf.Abs(speed));
+        v.x = xScale * (1 - speedXScaling * Mathf.Abs(speed));
+        scewObject.localScale = v;
+
+        if(warnResourcesTimer > 0)
+        {
+            warnResourcesTimer -= Time.deltaTime;
+
+            ResourcesDisplay.color = Color.Lerp(ResourcesDisplay.color, warnResourcesColor, warnResourcesAnimationSpeed);
+            if (ResourcesDisplay.fontSize < resourcesSize + warnResourcesSize)
+                ResourcesDisplay.fontSize++;
+        }
+        else
+        {
+            ResourcesDisplay.color = Color.Lerp(ResourcesDisplay.color, resourcesColor,warnResourcesAnimationSpeed);
+            if (ResourcesDisplay.fontSize > resourcesSize)
+                ResourcesDisplay.fontSize--;
+        }
+    }
+    public void WarnResources() {
+        warnResourcesTimer = warnResourcesDuration;
+        AudioPlay.PlaySound(ErrorSound,0.5f);
     }
 
     public Renderer[] visuals;
@@ -320,10 +380,15 @@ public class Builder : RadialMovementInput, Attackable
 
             visuals[i].materials = mats[i];
         }
+
     }
     void Start() {
         if (!Application.isPlaying) return;
+        yScale = scewObject.localScale.y;
+        xScale = scewObject.localScale.x;
         Health = startHealth;
+        resourcesColor = ResourcesDisplay.color;
+        resourcesSize = ResourcesDisplay.fontSize;
         for (int i = 0; i < visuals.Length; i++)
         {
             mats.Add(visuals[i].materials);

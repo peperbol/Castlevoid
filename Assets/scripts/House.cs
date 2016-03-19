@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class House : RadialPosition, Attackable
 {
@@ -91,27 +92,38 @@ public class House : RadialPosition, Attackable
     }
 
     protected virtual void Start() {
-
+        if (!Application.isPlaying) return;
         for (int i = 0; i < visuals.Length; i++)
         {
             mats.Add(visuals[i].materials);
         }
+        costDisplay.text = "- " + resourcesCost; 
         StartCoroutine(Building());
     }
-
     public float buildTime;
     public float buildDepht;
+    public Text costDisplay;
     IEnumerator Building() {
         AudioPlay.PlaySound(buildSound);
         float time = buildTime;
-         Vector3 pos = transform.GetChild(0).position;
+        Vector3 pos = transform.GetChild(0).position;
+        Color textColor = costDisplay.color;
+        if (!directionIsToLeft)
+        {
+            Vector3 s = costDisplay.transform.localScale;
+            s.x = -s.x;
+            costDisplay.transform.localScale = s;
+        }
         while (time>0)
         {
             time -= Time.deltaTime;
+            textColor.a = time / buildTime;
+            costDisplay.color = textColor;
             transform.GetChild(0).position = Vector3.Lerp(pos , pos - transform.right * buildDepht, time / buildTime);
             yield return null;
         }
         completed = true;
+        Destroy(costDisplay.gameObject);
         teamBase.houses.Add(this);
     }
 

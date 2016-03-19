@@ -53,7 +53,7 @@
 				}
 		
 		
-				fixed4 orgCol = tex2D(_MainTex, half2(xr+0.5,yr+0.5)); //Get the orginal rendered color 
+				fixed4 orgCol = tex2D(_MainTex, half2(yr+0.5,-xr+0.5)); //Get the orginal rendered color 
 		
 				return orgCol;
 			}
