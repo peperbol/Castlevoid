@@ -676,7 +676,7 @@ MonoBehaviour:
   health: 10
   visuals:
   - {fileID: 2325882}
-  minionsPerMinute: 1.5
+  minionsPerMinute: 2
   upgradesLeft: 0
   directionIsToLeft: 1
   teamBase: {fileID: 0}
@@ -730,7 +730,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 35907bc2d642a0447acf954da2df5a72, type: 3}
     - target: {fileID: 0}
       propertyPath: minionsPerMinute
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

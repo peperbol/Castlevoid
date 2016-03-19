@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4052483}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform88
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - 92: {fileID: 17257470}
   - 124: {fileID: 17257469}
   - 81: {fileID: 17257468}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Main Camera (2)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 83018901}
   - 95: {fileID: 83018902}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: mage_tent_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 85256694}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform87
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 104265885}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 134274737}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube157
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 177422566}
   - 95: {fileID: 177422567}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: shield_tent_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 197532782}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -805,7 +805,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 204857779}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube164
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 230330300}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube151
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 233158051}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 272031095}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube152
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 273842457}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform86
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1069,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 282366185}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform88
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1208,7 +1208,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 345628269}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube145
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 378190056}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 398016979}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform91
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418781554}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube164
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1325,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432817618}
   - 95: {fileID: 432817619}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: attack_tent_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440905661}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform97
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1486,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460095322}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform93
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1576,7 @@ GameObject:
   - 4: {fileID: 497074154}
   - 114: {fileID: 497074155}
   - 61: {fileID: 497074156}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1688,7 +1688,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 506840416}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube166
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1716,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 510114507}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube159
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 516781378}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1771,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 525449231}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube142
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1799,7 +1799,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 544313696}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1830,7 @@ GameObject:
   - 92: {fileID: 567182048}
   - 124: {fileID: 567182047}
   - 81: {fileID: 567182046}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Main Camera (1)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1911,7 +1911,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 577017463}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube145
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,7 +2024,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 594990142}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2051,7 +2051,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 600870530}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube159
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2079,7 +2079,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 603684037}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 635906098}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube144
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,7 +2189,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 669028139}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2269,7 +2269,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 698148265}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube161
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2339,7 +2339,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 718791850}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform89
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,7 +2472,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 735889766}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube165
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2500,7 +2500,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 738594980}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube143
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   - 224: {fileID: 739242837}
   - 222: {fileID: 739242839}
   - 114: {fileID: 739242838}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2591,7 +2591,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 742112282}
   - 95: {fileID: 742112283}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: mage_tent_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2646,7 +2646,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 745540529}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube161
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2715,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 778322779}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube151
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,7 +2761,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .860000014
+  m_Intensity: .699999988
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2863,7 +2863,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 816063030}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2894,7 +2894,7 @@ GameObject:
   - 114: {fileID: 819217049}
   - 114: {fileID: 819217048}
   - 114: {fileID: 819217047}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3076,7 +3076,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 864441903}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3103,7 +3103,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 891016415}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube167
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3223,7 +3223,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 895734289}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 900871693}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube157
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3279,7 +3279,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 908665610}
   - 95: {fileID: 908665611}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: attack_tent_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3332,7 +3332,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 914676872}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube165
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3360,7 +3360,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 919669353}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LightHouse (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,7 +3389,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 923091843}
   - 95: {fileID: 923091844}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: shield_tent_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3439,7 +3439,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 925081214}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3468,7 +3468,7 @@ GameObject:
   - 4: {fileID: 931281102}
   - 33: {fileID: 931281104}
   - 23: {fileID: 931281103}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube168
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3532,7 +3532,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 933948787}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube146
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3560,7 +3560,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 951639297}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3588,7 +3588,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 962389304}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3615,7 +3615,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1012212938}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube162
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3643,7 +3643,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1060137572}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3671,7 +3671,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1061256638}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube146
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3699,7 +3699,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1079498076}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3731,7 +3731,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1116679946}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube147
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3761,7 +3761,7 @@ GameObject:
   - 224: {fileID: 1155400164}
   - 222: {fileID: 1155400166}
   - 114: {fileID: 1155400165}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,7 +3820,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1165819902}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform91
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3847,7 +3847,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1186791798}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube150
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3875,7 +3875,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1206381019}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform96
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3902,7 +3902,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1207513818}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube162
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4156,7 +4156,7 @@ GameObject:
   - 224: {fileID: 1212340190}
   - 222: {fileID: 1212340192}
   - 114: {fileID: 1212340191}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4380,7 +4380,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1225947984}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform89
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5352,6 +5352,314 @@ Prefab:
       propertyPath: m_Materials.Array.data[7]
       value: 
       objectReference: {fileID: 2100000, guid: d61282df41df2fd4c9ff7d551de5385f, type: 2}
+    - target: {fileID: 100228, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100240, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100154, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100152, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100156, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100234, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100232, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100170, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100162, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100158, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100236, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100238, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100230, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100226, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100248, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100244, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100260, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100198, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100208, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100242, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100202, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100200, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100206, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100204, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100246, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100262, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100220, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100184, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100216, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100214, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100172, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100256, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100180, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100174, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100164, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100210, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100188, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100196, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100218, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100250, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100224, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100192, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100190, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100258, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100160, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100222, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100098, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100212, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100104, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100176, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100178, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100168, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100194, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100166, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100182, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100186, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100252, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100150, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100254, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b8496670f1204d418bcc0984afb0078, type: 3}
   m_IsPrefabParent: 0
@@ -5471,7 +5779,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1315378044}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform93
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5500,7 +5808,7 @@ GameObject:
   - 4: {fileID: 1320954344}
   - 33: {fileID: 1320954346}
   - 23: {fileID: 1320954345}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube170
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5573,7 +5881,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1327828780
 Transform:
@@ -5628,7 +5936,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1355467596}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube166
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5736,7 +6044,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1387268963}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube147
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5764,7 +6072,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1388688457}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform84
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5791,7 +6099,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1395170440}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6056,7 +6364,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1423158729}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6083,7 +6391,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1429892723}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube163
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6206,23 +6514,23 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 53035e18d0c3ab64aa9535938f37511e, type: 2}
     - target: {fileID: 100002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6243,7 +6551,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1491566996}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube152
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6271,7 +6579,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1492692532}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Lightwall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6299,7 +6607,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1493253933}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform86
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6326,7 +6634,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1504741766}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube167
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6354,7 +6662,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1535182099}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: LightArcherHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6386,7 +6694,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1553816915}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6415,7 +6723,7 @@ GameObject:
   - 224: {fileID: 1561729883}
   - 222: {fileID: 1561729885}
   - 114: {fileID: 1561729884}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6474,7 +6782,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1565980032}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform97
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6506,7 +6814,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1589068376}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube143
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6534,7 +6842,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1604701579}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform84
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6563,7 +6871,7 @@ GameObject:
   - 224: {fileID: 1612412588}
   - 222: {fileID: 1612412590}
   - 114: {fileID: 1612412589}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6805,7 +7113,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1654345209}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform87
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6893,7 +7201,7 @@ GameObject:
   m_TagString: Center
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1689811425
 Transform:
@@ -7064,7 +7372,7 @@ GameObject:
   - 4: {fileID: 1694270769}
   - 33: {fileID: 1694270771}
   - 23: {fileID: 1694270770}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube169
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7129,7 +7437,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1698727821}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube163
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7157,7 +7465,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1701807011}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LightArcherHouse (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7242,23 +7550,23 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 53035e18d0c3ab64aa9535938f37511e, type: 2}
     - target: {fileID: 100004, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7279,7 +7587,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1713907741}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform96
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7306,7 +7614,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1749207201}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Lightwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7415,7 +7723,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1757068306}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube150
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7535,7 +7843,7 @@ GameObject:
   - 4: {fileID: 1798294401}
   - 33: {fileID: 1798294403}
   - 23: {fileID: 1798294402}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube169
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7600,7 +7908,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1810163855}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7632,7 +7940,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1819815798}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7661,7 +7969,7 @@ GameObject:
   - 4: {fileID: 1822274779}
   - 33: {fileID: 1822274781}
   - 23: {fileID: 1822274780}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube170
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7898,7 +8206,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1835032993}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube158
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8020,7 +8328,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1909543707}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube144
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8230,7 +8538,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1953928857}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8259,7 +8567,7 @@ GameObject:
   - 224: {fileID: 1960978970}
   - 222: {fileID: 1960978972}
   - 114: {fileID: 1960978971}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8696,7 +9004,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2024206490}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: transform92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8723,7 +9031,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2028492351}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: LightHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8751,7 +9059,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2046861060}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube158
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8781,7 +9089,7 @@ GameObject:
   - 4: {fileID: 2049969406}
   - 114: {fileID: 2049969402}
   - 61: {fileID: 2049969403}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8895,7 +9203,7 @@ GameObject:
   - 4: {fileID: 2076806217}
   - 33: {fileID: 2076806219}
   - 23: {fileID: 2076806218}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: pCube168
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9006,6 +9314,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60e3d0cd5030a1a428affb1c3591ca48, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60e3d0cd5030a1a428affb1c3591ca48, type: 3}
   m_IsPrefabParent: 0
@@ -9070,7 +9382,7 @@ MonoBehaviour:
   houses: []
   melee: {fileID: 11434208, guid: f39e6be876942504881c3a859e1152f4, type: 2}
   ranged: {fileID: 11462754, guid: c523e40c12b51cf4abccf2f5655079a1, type: 2}
-  shield: {fileID: 11465552, guid: 6ddc76dfe623dad4dbb1dae3d55e5de1, type: 2}
+  shield: {fileID: 11499724, guid: 53fcdcfa5c7db7d43a16578caf959850, type: 2}
   isLight: 0
   MaxHealth: 15
   timeToDie: 3
@@ -9118,7 +9430,7 @@ GameObject:
   - 114: {fileID: 2101869117}
   - 114: {fileID: 2101869116}
   - 114: {fileID: 2101869119}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9219,7 +9531,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2108676150}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: transform82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9331,7 +9643,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2119936477}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9412,7 +9724,7 @@ MonoBehaviour:
   houses: []
   melee: {fileID: 11434208, guid: 28ec61b8bf0e36f4fbaaf44cf1b460ad, type: 2}
   ranged: {fileID: 11404936, guid: b03dba11cb3581f44847011853b77426, type: 2}
-  shield: {fileID: 11409580, guid: 7ae3b034dbd9c1344b219c5564966de4, type: 2}
+  shield: {fileID: 11499724, guid: ee5939bb454d97c4ca6944baa919978c, type: 2}
   isLight: 1
   MaxHealth: 15
   timeToDie: 3
@@ -9456,7 +9768,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2141537722}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: pCube142
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -245,14 +245,14 @@ MonoBehaviour:
   radius: 15
   position: 0
   force: 1
-  drag: .150000006
+  drag: .119999997
   health: 3
   animator: {fileID: 9563282}
   timeToDie: 1.5
   sight: 1.20000005
   enemyMask:
     serializedVersion: 2
-    m_Bits: 4352
+    m_Bits: 69888
   dead: 0
   visuals:
   - {fileID: 13766800}
@@ -347,7 +347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: enemyMask.m_Bits
-      value: 4352
+      value: 69888
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: sight
@@ -376,6 +376,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: position
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: force
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: drag
+      value: .119999997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

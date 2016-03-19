@@ -22,8 +22,8 @@ TagManager:
   - DarkBuilding
   - LightOnlyBuildObstruction
   - DarkOnlyBuildObstruction
-  - 
-  - 
+  - LightPlayer
+  - DarkPlayer
   - 
   - 
   - 

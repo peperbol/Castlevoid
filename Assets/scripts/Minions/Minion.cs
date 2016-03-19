@@ -24,7 +24,7 @@ public abstract class Minion : RadialMovement, Attackable
         {
             health = value;
 
-            if (health <= 0)
+            if (health <= 0 && !dead)
             {
                 //DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
                 StartCoroutine(Die());
@@ -97,8 +97,10 @@ public abstract class Minion : RadialMovement, Attackable
         if (damager is Builder) {
             ((Builder)damager).Loot();
         }
-
-        StartCoroutine(DmgFlash());
+        if (!dead)
+        {
+            StartCoroutine(DmgFlash());
+        }
     }
 
     List<Material[]> mats = new List<Material[]>();

@@ -394,7 +394,7 @@ MonoBehaviour:
   position: 173
   resourcesCost: 5
   buildSound: {fileID: 8300000, guid: 35907bc2d642a0447acf954da2df5a72, type: 3}
-  health: 25
+  health: 10
   visuals:
   - {fileID: 2354536}
   minionsPerMinute: 1
@@ -448,6 +448,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: minionsPerMinute
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

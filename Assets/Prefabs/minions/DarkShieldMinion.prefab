@@ -224,7 +224,7 @@ MonoBehaviour:
   sight: .5
   enemyMask:
     serializedVersion: 2
-    m_Bits: 4352
+    m_Bits: 69888
   dead: 0
   visuals:
   - {fileID: 13740312}
@@ -346,6 +346,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyMask.m_Bits
+      value: 69888
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

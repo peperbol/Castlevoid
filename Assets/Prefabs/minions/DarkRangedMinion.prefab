@@ -246,19 +246,19 @@ MonoBehaviour:
   position: 0
   force: 1
   drag: .200000003
-  health: 3
+  health: 2
   animator: {fileID: 9551688}
   timeToDie: 1.5
   sight: 25
   enemyMask:
     serializedVersion: 2
-    m_Bits: 4352
+    m_Bits: 69888
   dead: 0
   visuals:
   - {fileID: 13760506}
   - {fileID: 13708714}
   flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
-  timePerAttack: 2
+  timePerAttack: 1.75
   projectilePrefab: {fileID: 11438820, guid: eec5b9c0a63c2e84ab085f3f4b8c80c0, type: 2}
   ProjectileForce: {x: 300, y: 50}
 --- !u!137 &13708714
@@ -357,7 +357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: enemyMask.m_Bits
-      value: 4352
+      value: 69888
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Offset.x
@@ -386,6 +386,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timePerAttack
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
