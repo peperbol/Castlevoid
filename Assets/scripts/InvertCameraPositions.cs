@@ -9,7 +9,8 @@ public class InvertCameraPositions : MonoBehaviour
     public Shader sh;
     public void Start() {
         //Camera.main.SetReplacementShader(sh, "");
-        Screen.SetResolution(Screen.currentResolution.height, Screen.currentResolution.height, true);
+        int smallest = Mathf.Min(Screen.currentResolution.height, Screen.currentResolution.width);
+        Screen.SetResolution(smallest, smallest, true);
     }
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

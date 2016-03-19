@@ -1,22 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Menu : MonoBehaviour {
+public class Menu : MonoBehaviour
+{
     public string[] a;
     public string[] b;
-    void Update () {
+    public float timetillavailable;
 
-        for (int i = 0; i < a.Length; i++)
+    void Update()
+    {
+        if (timetillavailable > 0)
         {
-           if(Input.GetButtonDown(a[i])){
-                Application.LoadLevel("world");
-            }
+            timetillavailable -= Time.deltaTime;
         }
-        for (int i = 0; i < b.Length; i++)
+        else
         {
-            if (Input.GetButtonDown(b[i]))
+
+            for (int i = 0; i < a.Length; i++)
             {
-                Application.Quit();
+                if (Input.GetButtonDown(a[i]))
+                {
+                    Application.LoadLevel("world");
+                }
+            }
+            for (int i = 0; i < b.Length; i++)
+            {
+                if (Input.GetButtonDown(b[i]))
+                {
+                    Application.LoadLevel("menu");
+                }
             }
         }
     }
