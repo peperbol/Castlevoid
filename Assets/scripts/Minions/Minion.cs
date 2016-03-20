@@ -57,11 +57,11 @@ public abstract class Minion : RadialMovement, Attackable
     {
         return new Vector2(v.x, v.y);
     }
-    protected bool CanSeeEnemy(out Attackable a, out GameObject go)
+    protected bool CanSeeEnemy(out Attackable a, out GameObject go, float overrideSight = -1)
     {
         a = null;
         go = null;
-        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, sight, enemyMask);
+        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, (overrideSight<0)? sight: overrideSight, enemyMask);
 
         if (h.collider == null) return false;
 

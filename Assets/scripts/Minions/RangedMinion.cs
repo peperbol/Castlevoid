@@ -7,7 +7,7 @@ public class RangedMinion : Minion {
     private bool ready = true;
     public Projectile projectilePrefab;
     public Vector2 ProjectileForce;
-    private Vector2 worldForce { get { return transform.TransformPoint((DirectionIsToLeft) ? new Vector2(ProjectileForce.x, ProjectileForce.y) : ProjectileForce); } }
+    private Vector2 worldForce { get { return transform.TransformPoint((DirectionIsToLeft) ? new Vector2(ProjectileForce.x, -ProjectileForce.y) : ProjectileForce); } }
 
     bool attacking;
     public bool Attacking
@@ -35,6 +35,8 @@ public class RangedMinion : Minion {
         attacking = true;
         ready = false;
         yield return new WaitForSeconds(timePerAttack/2);
+        Attackable a;
+        if (!dead && CanSeeEnemy(out a, out go) ) 
         Projectile.Spawn(projectilePrefab, transform.position, worldForce, go.transform);
         attacking = false;
         yield return new WaitForSeconds(timePerAttack/2);

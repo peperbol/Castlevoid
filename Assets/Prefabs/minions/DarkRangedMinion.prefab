@@ -260,7 +260,7 @@ MonoBehaviour:
   flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
   timePerAttack: 1.75
   projectilePrefab: {fileID: 11438820, guid: eec5b9c0a63c2e84ab085f3f4b8c80c0, type: 2}
-  ProjectileForce: {x: 300, y: 50}
+  ProjectileForce: {x: 450, y: 100}
 --- !u!137 &13708714
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -349,11 +349,11 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: ProjectileForce.x
-      value: 300
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ProjectileForce.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: enemyMask.m_Bits
