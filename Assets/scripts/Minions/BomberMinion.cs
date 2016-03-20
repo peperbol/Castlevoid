@@ -12,10 +12,12 @@ public class BomberMinion : Minion {
     //public AudioClip dmgHit;
     protected override void Attack(GameObject go, Attackable a)
     {
-        StartCoroutine(Explode());
+        if(!exploded)
+            StartCoroutine(Explode());
     }
     protected IEnumerator Explode()
     {
+        exploded = true;
         GameObject expl = Instantiate(explosionPrefab);
         expl.transform.rotation = transform.rotation;
         expl.transform.position = transform.position;
