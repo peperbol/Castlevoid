@@ -8,6 +8,7 @@ public class BomberMinion : Minion {
     public LayerMask damageMask;
     public float timebeforeDamage = 0.1f;
     public float maxDamage;
+    public GameObject explosionPrefab;
     //public AudioClip dmgHit;
     protected override void Attack(GameObject go, Attackable a)
     {
@@ -15,6 +16,9 @@ public class BomberMinion : Minion {
     }
     protected IEnumerator Explode()
     {
+        GameObject expl = Instantiate(explosionPrefab);
+        expl.transform.rotation = transform.rotation;
+        expl.transform.position = transform.position;
         yield return new WaitForSeconds(timebeforeDamage);
         RaycastHit2D[] r = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.one, 0, damageMask);
         for (int i = 0; i < r.Length; i++)
