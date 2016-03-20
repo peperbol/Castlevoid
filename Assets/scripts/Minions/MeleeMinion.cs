@@ -4,6 +4,7 @@ using System;
 
 public class MeleeMinion : Minion
 {
+    public float attackReach;
     public float timePerAttack;
     private bool ready = true;
     bool attacking;
@@ -34,10 +35,17 @@ public class MeleeMinion : Minion
     {
         Attacking = true;
         ready = false;
-        yield return new WaitForSeconds(timePerAttack / 2);
-        AudioPlay. PlaySound(attackSound);
-        if (a != null)
-            a.Damage(this);
+        yield return new WaitForSeconds(timePerAttack / 2 - 0.02f);
+        GameObject go;
+        if (!dead && CanSeeEnemy(out a,out go, attackReach))
+        {
+            yield return new WaitForSeconds( 0.02f);
+            if (a != null)
+            {
+                AudioPlay.PlaySound(attackSound);
+                a.Damage(this);
+            }
+        }
         Attacking = false;
         yield return new WaitForSeconds(timePerAttack / 2);
         ready = true;

@@ -8,11 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489256}
-  - 33: {fileID: 3374024}
-  - 23: {fileID: 2322284}
   - 58: {fileID: 5884056}
   - 50: {fileID: 5038912}
   - 114: {fileID: 11438820}
+  - 212: {fileID: 21293508}
   m_Layer: 11
   m_Name: Darkprojectile
   m_TagString: Untagged
@@ -28,41 +27,10 @@ Transform:
   m_GameObject: {fileID: 113428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.6100006, y: -1.59000003, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalScale: {x: .100000001, y: .100000001, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2322284
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113428}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a840992cb03e0a145a14360338782ee6, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &3374024
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113428}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &5038912
 Rigidbody2D:
   serializedVersion: 2
@@ -107,6 +75,32 @@ MonoBehaviour:
   steerForce: 40000
   target: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 130685f45e52edf4894e8e99031138da, type: 3}
+--- !u!212 &21293508
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113428}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: df27911dd6b38214d8c6798a5c46c2b8, type: 3}
+  m_Color: {r: 1, g: .310344845, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

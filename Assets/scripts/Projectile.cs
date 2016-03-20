@@ -3,7 +3,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-    public static void Spawn(Projectile prefab, Vector3 pos,Vector2 force, Transform target) {
+    public static void Spawn(Projectile prefab, Vector3 pos, Vector2 force, Transform target)
+    {
         Projectile t = Instantiate(prefab);
         t.transform.position = pos;
         t.GetComponent<Rigidbody2D>().AddForce(force);
@@ -20,26 +21,44 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    bool locked;
+    float lockRange;
     // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        timeToLive -= Time.deltaTime;
-        if (timeToLive <= 0) Destroy(gameObject);
-        if (target == null)
+        timeToLive -= Time.fixedDeltaTime;
+        if (timeToLive <= 0 || target == null || target.GetComponent<Collider2D>() == null)
         {
             Destroy(gameObject);
             return;
         }
         Vector2 dir = ((Vector2)(target.position - transform.position));
-        float d = dir.sqrMagnitude;
-        dir = dir.normalized * steerForce;
-        rb.AddForce(dir * Time.deltaTime / d );
+        if (!locked)
+        {
+            if (dir.magnitude < lockRange)
+            {
+                locked = true;
+                steerForce = rb.velocity.magnitude;
+            }
+            float scale = dir.magnitude;
+            dir = dir.normalized * steerForce;
+            rb.AddForce(dir * Time.fixedDeltaTime / scale);
+        }
+        else
+        {
+            rb.velocity = dir.normalized * steerForce;
+        }
+    }
+    void start()
+    {
+        lockRange = ((Vector2)(target.position - transform.position)).magnitude /2;
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
-       Attackable a = coll.gameObject.GetComponent<Attackable>();
-        if (a != null) {
+        Attackable a = coll.gameObject.GetComponent<Attackable>();
+        if (a != null)
+        {
             a.Damage(this);
             Destroy(gameObject);
             AudioPlay.PlaySound(hitSound, 0.05f);

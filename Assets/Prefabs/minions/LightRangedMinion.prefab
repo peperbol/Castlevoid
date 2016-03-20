@@ -260,7 +260,7 @@ MonoBehaviour:
   flash: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
   timePerAttack: 1.75
   projectilePrefab: {fileID: 11497110, guid: c12470f6eed03f04e9490ba61962e2b7, type: 2}
-  ProjectileForce: {x: 300, y: 50}
+  ProjectileForce: {x: 450, y: 100}
 --- !u!137 &13764100
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -373,6 +373,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: timePerAttack
       value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ProjectileForce.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ProjectileForce.y
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
