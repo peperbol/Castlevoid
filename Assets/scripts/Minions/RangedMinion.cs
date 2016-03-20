@@ -8,7 +8,6 @@ public class RangedMinion : Minion {
     public Projectile projectilePrefab;
     public Vector2 ProjectileForce;
     private Vector2 worldForce { get { return transform.TransformPoint((DirectionIsToLeft) ? new Vector2(ProjectileForce.x, -ProjectileForce.y) : ProjectileForce); } }
-
     bool attacking;
     public bool Attacking
     {

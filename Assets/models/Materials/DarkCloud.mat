@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: DarkCloud
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
@@ -83,7 +83,7 @@ Material:
       data:
         first:
           name: _SrcBlend
-        second: 1
+        second: 5
       data:
         first:
           name: _DstBlend
@@ -91,11 +91,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -103,7 +103,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: 0.29
       data:
         first:
           name: _BumpScale
@@ -123,17 +123,17 @@ Material:
       data:
         first:
           name: _Mode
-        second: 3
+        second: 2
       data:
         first:
           name: _Metallic
-        second: 0
+        second: 0.037
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: .0479417592, g: .00778546697, b: .117647052, a: 1}
+        second: {r: 0.04794176, g: 0.007785467, b: 0.077, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .235294119, g: .235294119, b: .235294119, a: .391000003}
+        second: {r: 0.18382353, g: 0.18382353, b: 0.18382353, a: 0.353}

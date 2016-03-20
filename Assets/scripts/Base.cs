@@ -37,7 +37,7 @@ public class Base : MonoBehaviour
         while (time > 0)
         {
             time -= Time.deltaTime;
-            transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepth , pos, time / timeToDie);
+            transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepth, pos, time / timeToDie);
             yield return null;
         }
         endOverlay.SetActive(true);
@@ -53,10 +53,28 @@ public class Base : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         Minion m = c.GetComponent<Minion>();
-        if (m != null)
+        if (m != null )
         {
             Health--;
             Destroy(m.gameObject);
+        }
+        Builder b = c.GetComponent<Builder>();
+        if (b != null && b.team == this)
+            healTimer = TimePerHeath;
+    }
+    public float TimePerHeath;
+    private float healTimer;
+    public void OnTriggerStay2D(Collider2D c)
+    {
+        Builder b = c.GetComponent<Builder>();
+        if(b != null && b.team == this && b.Health < b.startHealth)
+        {
+            healTimer -= Time.deltaTime;
+            if( healTimer < 0)
+            {
+                healTimer += TimePerHeath;
+                b.Health++;
+            }
         }
     }
 
@@ -80,7 +98,8 @@ public class Base : MonoBehaviour
         }
         return h.Count;
     }
-    void Start() {
+    void Start()
+    {
         Health = MaxHealth;
     }
 

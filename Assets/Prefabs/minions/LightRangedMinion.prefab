@@ -116,8 +116,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187504}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -0, y: .011459182, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.011459182, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 479272}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: -1.17999995, z: 0}
+  m_LocalPosition: {x: 15, y: -1.18, z: 0}
   m_LocalScale: {x: 1.5, y: -1.5, z: 1.5}
   m_Children:
   - {fileID: 472368}
@@ -142,8 +142,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.0119099934, z: 0}
-  m_LocalScale: {x: 1.52446079, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.011909993, z: 0}
+  m_LocalScale: {x: 1.5244608, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 472368}
   m_RootOrder: 2
@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -.0409846641, z: 0}
+  m_LocalPosition: {x: -0, y: -0.040984664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 468428}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0369037949, z: 0}
+  m_LocalPosition: {x: 0, y: 0.036903795, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453488}
@@ -178,8 +178,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114108}
-  m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
-  m_LocalPosition: {x: -.421999991, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: -0.422, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 468428}
@@ -193,8 +193,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185932}
-  m_LocalRotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: .0199999996, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419140}
@@ -207,12 +207,13 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158740}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .458956718, y: .00802624226}
+  m_Offset: {x: 0.45895672, y: 0.008026242}
   serializedVersion: 2
-  m_Size: {x: 1.09520912, y: .248775721}
+  m_Size: {x: 1.0952091, y: 0.24877572}
 --- !u!95 &9599738
 Animator:
   serializedVersion: 3
@@ -245,11 +246,13 @@ MonoBehaviour:
   radius: 15
   position: 0
   force: 1
-  drag: .200000003
+  drag: 0.2
   health: 2
   animator: {fileID: 9599738}
   timeToDie: 1.5
-  sight: 25
+  sight: 7.5
+  sightVariation: 2
+  castObjectRadius: 3
   enemyMask:
     serializedVersion: 2
     m_Bits: 139776
@@ -279,8 +282,10 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -295,8 +300,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 479272}
   m_AABB:
-    m_Center: {x: 0, y: .0128229298, z: 0}
-    m_Extent: {x: .00898208842, y: .00401675701, z: .00189445552}
+    m_Center: {x: 0, y: 0.01282293, z: 0}
+    m_Extent: {x: 0.008982088, y: 0.004016757, z: 0.0018944555}
   m_DirtyAABB: 0
 --- !u!137 &13778008
 SkinnedMeshRenderer:
@@ -316,8 +321,10 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -332,8 +339,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 479272}
   m_AABB:
-    m_Center: {x: 0, y: -.00012009684, z: 0}
-    m_Extent: {x: .0106001273, y: .00890285987, z: .00312754349}
+    m_Center: {x: 0, y: -0.00012009684, z: 0}
+    m_Extent: {x: 0.010600127, y: 0.00890286, z: 0.0031275435}
   m_DirtyAABB: 0
 --- !u!1001 &100100000
 Prefab:

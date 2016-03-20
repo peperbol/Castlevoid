@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .045659177, z: 0}
+  m_LocalPosition: {x: 0, y: 0.045659177, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422330}
@@ -113,9 +113,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132436}
-  m_LocalRotation: {x: -.382683456, y: 0, z: -0, w: .923879564}
-  m_LocalPosition: {x: 0, y: .0254322048, z: 0}
-  m_LocalScale: {x: 1.28463888, y: 1.28463888, z: 1.28463888}
+  m_LocalRotation: {x: -0.38268346, y: 0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.025432205, z: 0}
+  m_LocalScale: {x: 1.2846389, y: 1.2846389, z: 1.2846389}
   m_Children: []
   m_Father: {fileID: 422330}
   m_RootOrder: 2
@@ -125,8 +125,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159318}
-  m_LocalRotation: {x: -.500000179, y: -.499999911, z: .499999821, w: -.50000006}
-  m_LocalPosition: {x: -.230000004, y: 0, z: -0}
+  m_LocalRotation: {x: -0.5000002, y: -0.4999999, z: 0.49999982, w: -0.50000006}
+  m_LocalPosition: {x: -0.23, y: 0, z: -0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 499170}
@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: .0254343096, z: 0}
+  m_LocalPosition: {x: -0, y: 0.02543431, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 499170}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0199999996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489364}
@@ -179,12 +179,13 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167782}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .626213074, y: .0150229931}
+  m_Offset: {x: 0.6262131, y: 0.015022993}
   serializedVersion: 2
-  m_Size: {x: 1.52471805, y: .393771648}
+  m_Size: {x: 1.524718, y: 0.39377165}
 --- !u!95 &9591144
 Animator:
   serializedVersion: 3
@@ -217,11 +218,13 @@ MonoBehaviour:
   radius: 15
   position: 0
   force: 1
-  drag: .200000003
+  drag: 0.2
   health: 10
   animator: {fileID: 9591144}
   timeToDie: 1.5
-  sight: .5
+  sight: 0.5
+  sightVariation: 0
+  castObjectRadius: 0.01
   enemyMask:
     serializedVersion: 2
     m_Bits: 69888
@@ -248,8 +251,10 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -264,8 +269,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 499170}
   m_AABB:
-    m_Center: {x: 0, y: .0256591793, z: 0}
-    m_Extent: {x: .00938119832, y: .00500000082, z: .00639823405}
+    m_Center: {x: 0, y: 0.02565918, z: 0}
+    m_Extent: {x: 0.009381198, y: 0.005000001, z: 0.006398234}
   m_DirtyAABB: 0
 --- !u!137 &13772478
 SkinnedMeshRenderer:
@@ -285,8 +290,10 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -301,8 +308,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 499170}
   m_AABB:
-    m_Center: {x: 0, y: .00134069566, z: 0}
-    m_Extent: {x: .0175602771, y: .013175278, z: .00908376835}
+    m_Center: {x: 0, y: 0.0013406957, z: 0}
+    m_Extent: {x: 0.017560277, y: 0.013175278, z: 0.009083768}
   m_DirtyAABB: 0
 --- !u!1001 &100100000
 Prefab:

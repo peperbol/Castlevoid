@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 using System.Collections.Generic;
 
 public abstract class Minion : RadialMovement, Attackable
@@ -41,6 +40,8 @@ public abstract class Minion : RadialMovement, Attackable
         Destroy(gameObject);
     }
     public float sight;
+    public float sightVariation;
+    public float castObjectRadius;
     public LayerMask enemyMask;
     private bool directionIsToLeft;
     public bool DirectionIsToLeft
@@ -61,7 +62,8 @@ public abstract class Minion : RadialMovement, Attackable
     {
         a = null;
         go = null;
-        RaycastHit2D h = Physics2D.Raycast(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, (overrideSight<0)? sight: overrideSight, enemyMask);
+        Vector3 d = (DirectionIsToLeft) ? transform.up : -transform.up;
+        RaycastHit2D h = Physics2D.CircleCast(transform.position +d * castObjectRadius,castObjectRadius, d,( (overrideSight<0)? sight: overrideSight) - castObjectRadius*2 , enemyMask);
 
         if (h.collider == null) return false;
 
@@ -124,7 +126,8 @@ public abstract class Minion : RadialMovement, Attackable
         }
     }
     void Start() {
-
+        if (!Application.isPlaying) return;
+        sight += Random.Range(-sightVariation, sightVariation);
         for (int i = 0; i < visuals.Length; i++)
         {
             mats.Add(visuals[i].materials);

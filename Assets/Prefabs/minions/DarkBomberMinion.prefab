@@ -223,6 +223,8 @@ MonoBehaviour:
   animator: {fileID: 9591144}
   timeToDie: 1.5
   sight: 0.5
+  sightVariation: 0.2
+  castObjectRadius: 0.01
   enemyMask:
     serializedVersion: 2
     m_Bits: 4352
