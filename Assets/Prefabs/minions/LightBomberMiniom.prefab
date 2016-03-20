@@ -239,7 +239,7 @@ MonoBehaviour:
     m_Bits: 139776
   timebeforeDamage: 0.1
   maxDamage: 14
-  explosionPrefab: {fileID: 161354, guid: fc1ce213e409adc4fb730b1cf661927d, type: 2}
+  explosionPrefab: {fileID: 142524, guid: c9e0beafc506d5940b2c04b0c1a9f726, type: 2}
 --- !u!137 &13740312
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
