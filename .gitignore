@@ -65,3 +65,7 @@ $RECYCLE.BIN/
 
 .vs
 Assets/UnityVS*
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/ProjectSettings.asset
+
+
