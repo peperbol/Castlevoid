@@ -82,8 +82,9 @@ public class Builder : RadialMovementInput, Attackable
     public Material buildPositive;
     public Material buildNegative;
 
-    public int resources;
+    public int StartResources;
     public Text ResourcesDisplay;
+    private int resources;
     public int Resources
     {
         get { return resources; }
@@ -121,8 +122,11 @@ public class Builder : RadialMovementInput, Attackable
 
     IEnumerator Die()
     {
+        if (Dead) yield break;
         Dead = true;
         yield return new WaitForSeconds(deadTime);
+        while (Frozen)
+            yield return null;
         Dead = false;
         Position = (team.isLight) ? 270 : 90;
         Health = startHealth;
@@ -235,7 +239,7 @@ public class Builder : RadialMovementInput, Attackable
     {
         base.Update();
         if (!Application.isPlaying) return;
-        if (inUse && CanMove)
+        if (inUse && CanMove && !Frozen)
         {
             /*
             //Debug.Log(Input.GetAxis(Build));
@@ -384,6 +388,7 @@ public class Builder : RadialMovementInput, Attackable
     }
     void Start() {
         if (!Application.isPlaying) return;
+        resources = StartResources;
         yScale = scewObject.localScale.y;
         xScale = scewObject.localScale.x;
         Health = startHealth;

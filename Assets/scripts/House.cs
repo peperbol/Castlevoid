@@ -3,13 +3,15 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class House : RadialPosition, Attackable
+public class House : RadialPosition, Attackable, Freezable
 {
 
     public static void Build(House prefab, Base team, float position)
     {
         House h = Instantiate(prefab);
+        SceneManager.MoveGameObjectToScene(h.gameObject, SceneManager.GetSceneByName("gameplay"));
         h.center = GameObject.FindGameObjectWithTag("Center").transform;
         
         h.Position = position;
@@ -21,6 +23,8 @@ public class House : RadialPosition, Attackable
     public AudioClip buildSound;
     public int health;
     public Renderer[] visuals;
+    public bool Frozen { get { return frozen; } set { frozen = value; } }
+    private bool frozen = false;
     public int Health
     {
         get { return health; }
@@ -145,6 +149,7 @@ public class House : RadialPosition, Attackable
 
     public void Spawn()
     {
+        if (frozen) return;
         timer -= Time.deltaTime * MinionsPerMinute;
         if (timer <= 0)
         {

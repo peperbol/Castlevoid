@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
-public abstract class Minion : RadialMovement, Attackable
+public abstract class Minion : RadialMovement, Attackable, Freezable
 {
     public static void Spawn(Minion prefab, bool toLeft, float pos)
     {
         Minion m = Instantiate(prefab);
+
+        SceneManager.MoveGameObjectToScene(m.gameObject, SceneManager.GetSceneByName("gameplay"));
         m.center = GameObject.FindGameObjectWithTag("Center").transform;
         m.DirectionIsToLeft = toLeft;
         m.Position = pos;
@@ -15,7 +18,8 @@ public abstract class Minion : RadialMovement, Attackable
     public int health;
     public Animator animator;
     public float timeToDie;
-
+    public bool Frozen { get { return frozen; } set { frozen = value; } }
+    private bool frozen = false;
     public int Health
     {
         get { return health; }
@@ -79,7 +83,7 @@ public abstract class Minion : RadialMovement, Attackable
     protected override void Update()
     {
         base.Update();
-        if (!dead)
+        if (!dead && !frozen)
         {
             Attackable a;
             GameObject go;

@@ -28,26 +28,34 @@ public class Base : MonoBehaviour
         }
     }
     public float buildDepth;
-    public GameObject endOverlay;
-    public GameObject endMenu;
-    IEnumerator Destroy()
+    public GameObject explosion;
+
+    public IEnumerator Undestroy()
+    {
+        explosion.SetActive(false);
+        float time = timeToDie;
+        Vector3 pos = transform.GetChild(0).position;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            transform.GetChild(0).position = Vector3.Lerp(pos + transform.right * buildDepth, pos, time / timeToDie);
+            yield return null;
+        }
+
+    }
+        IEnumerator Destroy()
     {
         float time = timeToDie;
         Vector3 pos = transform.GetChild(0).position;
+        explosion.SetActive(true);
         while (time > 0)
         {
             time -= Time.deltaTime;
             transform.GetChild(0).position = Vector3.Lerp(pos - transform.right * buildDepth, pos, time / timeToDie);
             yield return null;
         }
-        endOverlay.SetActive(true);
-        Builder[] b = FindObjectsOfType<Builder>();
-        for (int i = 0; i < b.Length; i++)
-        {
-            b[i].CanMove = false;
-        }
-        endMenu.SetActive(true);
-        Destroy(gameObject);
+        Menu.GameOver(this);
+        yield break;
     }
 
     void OnTriggerEnter2D(Collider2D c)

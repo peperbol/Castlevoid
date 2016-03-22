@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RadialMovementInput : RadialMovement {
+public class RadialMovementInput : RadialMovement, Freezable
+{
 
     public float zoomSpeed;
     public float minFOV;
@@ -12,6 +13,10 @@ public class RadialMovementInput : RadialMovement {
     public Camera cam;
     [Range(0,1)]
     public float deadZone = 0.2f;
+
+    public bool Frozen { get { return frozen; } set { frozen = value; } }
+    private bool frozen = false;
+
     private float zoomVal;
     protected bool directionIsToLeft;
     public bool CanMove {
@@ -31,7 +36,7 @@ public class RadialMovementInput : RadialMovement {
 
     protected override void Update() {
         base.Update();
-        if (inUse) {
+        if (inUse && !Frozen) {
             float i = Input.GetAxis(horizontalButton);
             /*
             if (Input.GetButton(leftButton)) i--;
