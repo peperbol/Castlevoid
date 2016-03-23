@@ -15,31 +15,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &155838
+--- !u!1 &180604
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 409188}
-  - 198: {fileID: 19830962}
-  - 199: {fileID: 19996490}
+  - 4: {fileID: 442038}
+  - 198: {fileID: 19846238}
+  - 199: {fileID: 19943002}
   m_Layer: 0
-  m_Name: ExplosionBomber
+  m_Name: ExplosionDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &409188
+--- !u!4 &442038
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155838}
+  m_GameObject: {fileID: 180604}
   m_LocalRotation: {x: -0.5000001, y: 0.5, z: -0.5, w: 0.49999994}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 458614}
@@ -54,15 +54,15 @@ Transform:
   m_LocalPosition: {x: 16.73, y: 5.65591, z: -0.14453125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 409188}
+  - {fileID: 442038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!198 &19830962
+--- !u!198 &19846238
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155838}
+  m_GameObject: {fileID: 180604}
   serializedVersion: 2
   lengthInSec: 2
   startDelay:
@@ -262,7 +262,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4285244927
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 20
@@ -1541,17 +1541,17 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19996490
+--- !u!199 &19943002
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155838}
+  m_GameObject: {fileID: 180604}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: acf00b63e9f760d468048861aa9d20c5, type: 2}
+  - {fileID: 2100000, guid: 45cfae23b6868f64baf7999d814ef6f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
