@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Explosion
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 206, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 770702b7e2e9bc048a3b236062cf31f0, type: 3}
+          m_Texture: {fileID: 2800000, guid: f2101b3be13be8145bae8c74de923552, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -45,6 +45,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
@@ -60,13 +67,6 @@ Material:
       data:
         first:
           name: _DetailAlbedoMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _OcclusionMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -95,10 +95,6 @@ Material:
         first:
           name: _Parallax
         second: 0.02
-      data:
-        first:
-          name: _InvFade
-        second: 1
       data:
         first:
           name: _ZWrite
@@ -131,6 +127,10 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _InvFade
+        second: 1
     m_Colors:
       data:
         first:
