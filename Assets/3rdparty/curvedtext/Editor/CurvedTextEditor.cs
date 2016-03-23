@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
-
+/*
 [CustomEditor(typeof(CurvedText))] 
 public class CurvedTextEditor : Editor
 {
@@ -9,4 +9,4 @@ public class CurvedTextEditor : Editor
 	{
 		DrawDefaultInspector ();
 	}
-}
+}*/
