@@ -108,6 +108,8 @@ public class Base : MonoBehaviour
     }
     void Start()
     {
+        transform.GetChild(0).position -= transform.right * buildDepth;
+        StartCoroutine( Undestroy());
         Health = MaxHealth;
     }
 

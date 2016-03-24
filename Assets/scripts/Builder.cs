@@ -394,6 +394,8 @@ public class Builder : RadialMovementInput, Attackable
         Health = startHealth;
         resourcesColor = ResourcesDisplay.color;
         resourcesSize = ResourcesDisplay.fontSize;
+
+        AudioPlay.PlaySound(respawnSound, 0.5f);
         for (int i = 0; i < visuals.Length; i++)
         {
             mats.Add(visuals[i].materials);
