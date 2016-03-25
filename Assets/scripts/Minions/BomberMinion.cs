@@ -27,7 +27,6 @@ public class BomberMinion : Minion {
         {
             int dmg = Mathf.RoundToInt( maxDamage *( 1- Vector3.Distance( r[i].transform.position, transform.position)  / explosionRadius));
             Attackable a = r[i].transform.GetComponent<Attackable>();
-            Debug.Log(r[i].transform.gameObject.name +" " + dmg);
             for (int j = 0; j < dmg; j++)
             {
                 a.Damage(this);
