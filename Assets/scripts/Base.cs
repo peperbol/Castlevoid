@@ -21,7 +21,7 @@ public class Base : MonoBehaviour
         {
             health = value;
 
-            if (health <= 0)
+            if (health <= 0 && !explosion.activeSelf)
             {
                 StartCoroutine(Destroy());
             }

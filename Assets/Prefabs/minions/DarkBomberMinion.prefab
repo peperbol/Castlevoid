@@ -238,7 +238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 69888
   timebeforeDamage: 0.1
-  maxDamage: 14
+  maxDamage: 10
   explosionPrefab: {fileID: 145456, guid: dfd490abdd3e0f246bdac027776ac5e3, type: 2}
 --- !u!137 &13740312
 SkinnedMeshRenderer:

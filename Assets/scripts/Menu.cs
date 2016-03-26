@@ -56,13 +56,15 @@ public class Menu : MonoBehaviour
     public void OnEnable()
     {
         availableTimer = timeTillAvailable;
+        Debug.Log("reset");
     }
 
     void Update()
     {
-        if (timeTillAvailable > 0)
+        Debug.Log(availableTimer);
+        if (availableTimer > 0)
         {
-            timeTillAvailable -= Time.deltaTime;
+            availableTimer -= Time.deltaTime;
         }
         else
         {
@@ -97,10 +99,16 @@ public class Menu : MonoBehaviour
     }
     public static void GameOver(Base loser)
     {
-        m.GetComponent<Image>().enabled = true;
+        FindObjectOfType<MenuVisuals>().Appear();
         m.gameObject.SetActive(true);
         m.RestartMenu = true;
         Freeze();
+    }
+    public static void MainManuStart()
+    {
+        FindObjectOfType<MenuVisuals>().Appear();
+        m.gameObject.SetActive(true);
+        m.MainMenu = true;
     }
     public static void Freeze()
     {
@@ -121,17 +129,20 @@ public class Menu : MonoBehaviour
     }
     private void Disable()
     {
-        m.GetComponent<Image>().enabled = false;
+
+        FindObjectOfType<MenuVisuals>().Disappear();
+
         mainMenu = false;
         RestartMenu = false;
     }
     IEnumerator StartGameFromMenu()
     {
         Disable();
-        SceneManager.UnloadScene("menu");
         SceneManager.LoadScene("gameplay", LoadSceneMode.Additive);
         yield return new WaitForSeconds(timeBeforeRestart);
+        SceneManager.UnloadScene("menu");
 
+        m.gameObject.SetActive(false);
     }
 
     IEnumerator Restart()
@@ -150,7 +161,8 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeRestart);
         SceneManager.UnloadScene("gameplay");
         SceneManager.LoadScene("menu", LoadSceneMode.Additive);
-        MainMenu = true;
+        m.gameObject.SetActive(false);
+
 
     }
     void EndGame()

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-/*
+
 [ExecuteInEditMode]
 public class CurvedText : Text
 {
@@ -77,4 +77,4 @@ public class CurvedText : Text
 		}
 		rectTransform.sizeDelta = new Vector2(circumference*wrapAngle/360.0f,rectTransform.sizeDelta.y);
 	}
-}*/
+}
