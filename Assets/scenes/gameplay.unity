@@ -4019,7 +4019,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6221,7 +6220,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -10508,7 +10506,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -10663,7 +10660,7 @@ MonoBehaviour:
   ranged: {fileID: 11462754, guid: c523e40c12b51cf4abccf2f5655079a1, type: 2}
   shield: {fileID: 11499724, guid: 53fcdcfa5c7db7d43a16578caf959850, type: 2}
   isLight: 0
-  MaxHealth: 3
+  MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5
   explosion: {fileID: 1280703838}
@@ -10789,7 +10786,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -11011,7 +11007,7 @@ MonoBehaviour:
   ranged: {fileID: 11404936, guid: b03dba11cb3581f44847011853b77426, type: 2}
   shield: {fileID: 11499724, guid: ee5939bb454d97c4ca6944baa919978c, type: 2}
   isLight: 1
-  MaxHealth: 3
+  MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5
   explosion: {fileID: 87200163}
