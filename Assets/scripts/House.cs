@@ -67,6 +67,14 @@ public class House : RadialPosition, Attackable, Freezable
         teamBase.houses.Remove(this);
     }
 
+    public virtual bool Attackable
+    {
+        get
+        {
+            return true;
+        }
+    }
+
     public Material flash;
     public virtual void Damage(MonoBehaviour damager)
     {
