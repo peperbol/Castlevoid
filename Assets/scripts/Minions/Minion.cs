@@ -67,7 +67,7 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
         a = null;
         go = null;
         Vector3 d = (DirectionIsToLeft) ? transform.up : -transform.up;
-        RaycastHit2D h = Physics2D.CircleCast(transform.position +d * castObjectRadius,castObjectRadius, d,( (overrideSight<0)? sight: overrideSight) - castObjectRadius*2 , enemyMask);
+        RaycastHit2D h = Physics2D.CircleCast(transform.position + d * castObjectRadius, castObjectRadius, d, ((overrideSight < 0) ? sight : overrideSight) - castObjectRadius * 2, enemyMask);
 
         if (h.collider == null) return false;
 
@@ -100,7 +100,8 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
     public virtual void Damage(MonoBehaviour damager)
     {
         Health--;
-        if (damager is Builder) {
+        if (damager is Builder)
+        {
             ((Builder)damager).Loot();
         }
         if (!dead)
@@ -110,7 +111,8 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
     }
 
     List<Material[]> mats = new List<Material[]>();
-    public IEnumerator DmgFlash() {
+    public IEnumerator DmgFlash()
+    {
         for (int i = 0; i < visuals.Length; i++)
         {
             Material[] m = visuals[i].materials;
@@ -129,13 +131,22 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
             visuals[i].materials = mats[i];
         }
     }
-    void Start() {
+    void Start()
+    {
         if (!Application.isPlaying) return;
         sight += Random.Range(-sightVariation, sightVariation);
         for (int i = 0; i < visuals.Length; i++)
         {
             mats.Add(visuals[i].materials);
         }
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        Vector3 d = (DirectionIsToLeft) ? transform.up : -transform.up;
+        Gizmos.DrawSphere(transform.position + d * castObjectRadius, castObjectRadius);
+        Gizmos.DrawSphere(transform.position + d * (castObjectRadius + ( sight - castObjectRadius * 2)), castObjectRadius);
+        Gizmos.DrawLine(transform.position + d * castObjectRadius, transform.position + d * (castObjectRadius + (sight - castObjectRadius * 2)));
     }
 
     public enum Type { Melee, Ranged, Shield, None }
