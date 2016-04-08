@@ -74,7 +74,6 @@ public class Base : MonoBehaviour
         {
             healTimer = TimePerHeath;
             b.isInBase = true;
-            Debug.Log("in");
         }
     }
 
@@ -84,7 +83,6 @@ public class Base : MonoBehaviour
         if (b != null && b.team == this)
         {
             b.isInBase = false;
-            Debug.Log("out");
         }
     }
     public float TimePerHeath;

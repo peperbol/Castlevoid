@@ -15,7 +15,7 @@ public class CloudWiggle : MonoBehaviour {
         pos = transform.position;
         locpos = RandomVector() * outerradius ;
         target = -locpos ;
-        Vector3 velocity= - locpos ;
+        velocity= - locpos ;
     }
 	void Update () {
         if (!returning && locpos.magnitude > outerradius)

@@ -42,7 +42,7 @@ public class MenuVisuals : MonoBehaviour
     {
         a = false;
         StartCoroutine(tweenModifer(1f, 0.0000001f, e => a, () => { i.enabled = false; }));
-        Debug.Log("d");
+
     }
 
     IEnumerator tweenModifer(float from, float to,Predicate<object> breakRequirement, Action a = null)
