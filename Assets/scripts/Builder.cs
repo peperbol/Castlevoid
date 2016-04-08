@@ -160,11 +160,12 @@ public class Builder : RadialMovementInput, Attackable
         
         a = new List<Attackable>();
         RaycastHit2D[] h = Physics2D.RaycastAll(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
-        
+        Attackable at;
         for (int i = 0; i < h.Length; i++)
         {
-            if (h[i].collider.GetComponent<Attackable>() != null)
-                a.Add(h[i].collider.GetComponent<Attackable>());
+            at = h[i].collider.GetComponent<Attackable>();
+            if (at != null)
+                a.Add(at);
         }
 
         return a.Count > 0;
@@ -363,6 +364,15 @@ public class Builder : RadialMovementInput, Attackable
             ((Builder)damager).Loot();
         }
         StartCoroutine(DmgFlash());
+    }
+    [NonSerialized]
+    public bool isInBase;
+    public virtual bool Attackable
+    {
+        get
+        {
+            return !isInBase;
+        }
     }
     List<Material[]> mats = new List<Material[]>();
     public IEnumerator DmgFlash()

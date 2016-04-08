@@ -27,7 +27,7 @@ public class CurvedText : Text
 	private float _radius = -1;
 	private float _scaleFactor = -1;
 	private float _circumference = -1;
-
+    /*
 	protected override void OnValidate()
 	{
 		base.OnValidate();
@@ -39,7 +39,7 @@ public class CurvedText : Text
 		{
 			scaleFactor = 0.001f;
 		}
-	}
+	}*/
 		
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{	

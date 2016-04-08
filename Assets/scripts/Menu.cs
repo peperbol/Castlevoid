@@ -61,7 +61,6 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(availableTimer);
         if (availableTimer > 0)
         {
             availableTimer -= Time.deltaTime;

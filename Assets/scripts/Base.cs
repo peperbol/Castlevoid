@@ -43,7 +43,7 @@ public class Base : MonoBehaviour
         }
 
     }
-        IEnumerator Destroy()
+    IEnumerator Destroy()
     {
         float time = timeToDie;
         Vector3 pos = transform.GetChild(0).position;
@@ -61,24 +61,38 @@ public class Base : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         Minion m = c.GetComponent<Minion>();
-        if (m != null )
+        if (m != null)
         {
             Health--;
             Destroy(m.gameObject);
         }
         Builder b = c.GetComponent<Builder>();
         if (b != null && b.team == this)
+        {
             healTimer = TimePerHeath;
+            b.isInBase = true;
+            Debug.Log("in");
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D c)
+    {
+        Builder b = c.GetComponent<Builder>();
+        if (b != null && b.team == this)
+        {
+            b.isInBase = false;
+            Debug.Log("out");
+        }
     }
     public float TimePerHeath;
     private float healTimer;
     public void OnTriggerStay2D(Collider2D c)
     {
         Builder b = c.GetComponent<Builder>();
-        if(b != null && b.team == this && b.Health < b.startHealth)
+        if (b != null && b.team == this && b.Health < b.startHealth)
         {
             healTimer -= Time.deltaTime;
-            if( healTimer < 0)
+            if (healTimer < 0)
             {
                 healTimer += TimePerHeath;
                 b.Health++;
@@ -109,7 +123,7 @@ public class Base : MonoBehaviour
     void Start()
     {
         transform.GetChild(0).position -= transform.right * buildDepth;
-        StartCoroutine( Undestroy());
+        StartCoroutine(Undestroy());
         Health = MaxHealth;
     }
 
