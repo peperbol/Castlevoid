@@ -36,7 +36,7 @@ public class MenuVisuals : MonoBehaviour
         a = true;
         i.enabled = true;
         StartCoroutine(tweenModifer(0.00001f, 1, e => !a));
-        Debug.Log("a");
+
     }
     public void Disappear()
     {

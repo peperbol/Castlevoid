@@ -852,73 +852,6 @@ SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 13700002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf,
     type: 3}
   m_PrefabInternal: {fileID: 1480326116}
---- !u!1 &327728946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 327728947}
-  - 222: {fileID: 327728949}
-  - 114: {fileID: 327728948}
-  m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &327728947
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327728946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1311968658}
-  m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &327728948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327728946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 55f1167d9da14574582f10df1d4ed9a3, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &327728949
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327728946}
 --- !u!1 &345628268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &434699914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4767,7 +4700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1154880174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4802,7 +4735,7 @@ MonoBehaviour:
   team: {fileID: 2123535081}
   bar: {fileID: 966870351}
   left: 0
-  tweenSpeed: 0.1
+  tweenSpeed: 0.3
 --- !u!114 &1154880176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6229,6 +6162,8 @@ GameObject:
   - 223: {fileID: 1311968657}
   - 114: {fileID: 1311968656}
   - 114: {fileID: 1311968655}
+  - 222: {fileID: 1311968660}
+  - 114: {fileID: 1311968659}
   m_Layer: 5
   m_Name: postcamCanvas
   m_TagString: Untagged
@@ -6303,7 +6238,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1794970115}
-  - {fileID: 327728947}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
@@ -6311,6 +6245,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1311968659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311968654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf503ecdb8bfe4ea1e27806064fd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team1: {fileID: 2091729168}
+  team2: {fileID: 2123535081}
+  m: {fileID: 2100000, guid: 55f1167d9da14574582f10df1d4ed9a3, type: 2}
+  reset: 0
+  tweenSpeed: 0.05
+--- !u!222 &1311968660
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311968654}
 --- !u!1 &1315378043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10731,6 +10687,7 @@ MonoBehaviour:
   ranged: {fileID: 11462754, guid: c523e40c12b51cf4abccf2f5655079a1, type: 2}
   shield: {fileID: 11499724, guid: 53fcdcfa5c7db7d43a16578caf959850, type: 2}
   isLight: 0
+  enemy: {fileID: 2123535081}
   MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5
@@ -11079,6 +11036,7 @@ MonoBehaviour:
   ranged: {fileID: 11404936, guid: b03dba11cb3581f44847011853b77426, type: 2}
   shield: {fileID: 11499724, guid: ee5939bb454d97c4ca6944baa919978c, type: 2}
   isLight: 1
+  enemy: {fileID: 2091729168}
   MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5

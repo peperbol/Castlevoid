@@ -7,8 +7,11 @@
 
 	SubShader{
 
-		ZTest Always Cull Off ZWrite Off Fog{ Mode Off 
-	} //Rendering settings
+		ZTest Always
+		Cull Off 
+		ZWrite Off 
+		Fog{ Mode Off } 
+		//Rendering settings
 
 	Pass{
 		CGPROGRAM

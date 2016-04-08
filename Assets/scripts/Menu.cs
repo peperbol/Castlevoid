@@ -56,7 +56,6 @@ public class Menu : MonoBehaviour
     public void OnEnable()
     {
         availableTimer = timeTillAvailable;
-        Debug.Log("reset");
     }
 
     void Update()

@@ -78,6 +78,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ImageTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -91,6 +98,14 @@ Material:
         first:
           name: _Cutoff
         second: 0.5
+      data:
+        first:
+          name: _Split
+        second: 0.64999944
+      data:
+        first:
+          name: _AA
+        second: 0.02
       data:
         first:
           name: _Parallax
@@ -129,12 +144,52 @@ Material:
         second: 0
       data:
         first:
-          name: _Split
-        second: 0.24
+          name: _Detail
+        second: 50
       data:
         first:
-          name: _AA
-        second: 0.01
+          name: _AAE
+        second: 1
+      data:
+        first:
+          name: _AAP
+        second: 1
+      data:
+        first:
+          name: _R
+        second: 0.312
+      data:
+        first:
+          name: _Detail1
+        second: 200
+      data:
+        first:
+          name: _Detail2
+        second: 150
+      data:
+        first:
+          name: _Detail3
+        second: 30
+      data:
+        first:
+          name: _maxR
+        second: 0.218
+      data:
+        first:
+          name: _minR
+        second: 0.262
+      data:
+        first:
+          name: _blurR
+        second: 0.136
+      data:
+        first:
+          name: _AAPmin
+        second: 0.091
+      data:
+        first:
+          name: _AAPmax
+        second: 1
     m_Colors:
       data:
         first:
@@ -147,8 +202,12 @@ Material:
       data:
         first:
           name: _C1
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: 0.8602941, g: 0.12651385, b: 0.12651385, a: 0.315}
       data:
         first:
           name: _C2
+        second: {r: 0.054984864, g: 0.8308824, b: 0.054984864, a: 0.3137255}
+      data:
+        first:
+          name: _Detail
         second: {r: 0, g: 1, b: 0, a: 1}

@@ -10,6 +10,7 @@ public class Base : MonoBehaviour
     public Minion ranged;
     public Minion shield;
     public bool isLight;
+    public Base enemy;
 
     public int MaxHealth;
     private int health;
@@ -21,7 +22,7 @@ public class Base : MonoBehaviour
         {
             health = value;
 
-            if (health <= 0 && !explosion.activeSelf)
+            if (health <= 0 )
             {
                 StartCoroutine(Destroy());
             }
@@ -45,6 +46,7 @@ public class Base : MonoBehaviour
     }
     IEnumerator Destroy()
     {
+        if (explosion.activeSelf) yield break;
         float time = timeToDie;
         Vector3 pos = transform.GetChild(0).position;
         explosion.SetActive(true);
@@ -64,6 +66,7 @@ public class Base : MonoBehaviour
         if (m != null)
         {
             Health--;
+            enemy.Health++;
             Destroy(m.gameObject);
         }
         Builder b = c.GetComponent<Builder>();

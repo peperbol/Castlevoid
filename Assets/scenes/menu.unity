@@ -180,6 +180,7 @@ GameObject:
   - 223: {fileID: 1193408188}
   - 114: {fileID: 1193408187}
   - 114: {fileID: 1193408186}
+  - 114: {fileID: 1193408190}
   m_Layer: 5
   m_Name: postcamCanvas
   m_TagString: Untagged
@@ -261,3 +262,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1193408190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193408185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf503ecdb8bfe4ea1e27806064fd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team1: {fileID: 0}
+  team2: {fileID: 0}
+  m: {fileID: 2100000, guid: 55f1167d9da14574582f10df1d4ed9a3, type: 2}
+  reset: 1
+  tweenSpeed: 0.05
