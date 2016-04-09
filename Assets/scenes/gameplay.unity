@@ -809,7 +809,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 296249765}
-  - 114: {fileID: 296249766}
   m_Layer: 0
   m_Name: Darkplayer2controller
   m_TagString: Untagged
@@ -831,22 +830,6 @@ Transform:
   - {fileID: 697678783}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!114 &296249766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 296249764}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5dd4f4a348404449ec226c86061a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchLButton: SwitchL2
-  switchRButton: SwitchR2
-  inputs:
-  - {fileID: 497074155}
-  index: 0
 --- !u!137 &309744437 stripped
 SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 13700002, guid: 0ea77ec1e2cf94c9d85b433b22626cdf,
@@ -5121,7 +5104,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1210916587}
-  - 114: {fileID: 1210916588}
   m_Layer: 0
   m_Name: Lightplayer1controller
   m_TagString: Untagged
@@ -5143,22 +5125,6 @@ Transform:
   - {fileID: 1669710537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1210916588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1210916586}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5dd4f4a348404449ec226c86061a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchLButton: SwitchL1
-  switchRButton: SwitchR1
-  inputs:
-  - {fileID: 2049969402}
-  index: 0
 --- !u!1 &1212340189
 GameObject:
   m_ObjectHideFlags: 0
