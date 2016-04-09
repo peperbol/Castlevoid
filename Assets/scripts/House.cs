@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -25,17 +25,35 @@ public class House : RadialPosition, Attackable, Freezable
     public Renderer[] visuals;
     public bool Frozen { get { return frozen; } set { frozen = value; } }
     private bool frozen = false;
+    public float dangerPlayProximity;
+    public DangerAnimation dangerPrefab;
+    public float dangerTimeout;
+    float dangerTimeoutTimer; 
+
     public int Health
     {
         get { return health; }
         set
         {
+            if (value < health && dangerTimeoutTimer <= 0 && RadialPosition.RadialDistance(FindObjectsOfType<Builder>().First(e=> e.team == teamBase).position, position) > dangerPlayProximity)
+            {
+                DangerAnimation.spawnDanger(dangerPrefab, position);
+                dangerTimeoutTimer = dangerTimeout;
+                StartCoroutine(CountdownDanger());
+            }
             health = value;
 
             if (health <= 0)
             {
                 StartCoroutine(Destroy());
             }
+        }
+    }
+    IEnumerator CountdownDanger() {
+        while(dangerTimeoutTimer > 0)
+        {
+            dangerTimeoutTimer -= Time.deltaTime;
+            yield return null;
         }
     }
 

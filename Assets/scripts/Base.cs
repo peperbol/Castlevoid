@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Base : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class Base : MonoBehaviour
     public int MaxHealth;
     private int health;
     public float timeToDie;
+
     public int Health
     {
         get { return health; }
         set
         {
+
             health = value;
 
             if (health <= 0 )
@@ -60,7 +63,6 @@ public class Base : MonoBehaviour
         Menu.GameOver(this);
         yield break;
     }
-
     void OnTriggerEnter2D(Collider2D c)
     {
         Minion m = c.GetComponent<Minion>();
@@ -72,6 +74,7 @@ public class Base : MonoBehaviour
             RadialPosition t = Instantiate((m.DirectionIsToLeft) ? RightExplosion : LeftExplosion);
             t.center = m.center;
             t.position = m.position;
+
             Destroy(m.gameObject);
 
         }
