@@ -129,7 +129,7 @@ public class House : RadialPosition, Attackable, Freezable
         while (time>0)
         {
             time -= Time.deltaTime;
-            textColor.a = time / buildTime;
+            textColor.a = Mathf.Max(2 * time / buildTime,1);
             costDisplay.color = textColor;
             transform.GetChild(0).position = Vector3.Lerp(pos , pos - transform.right * buildDepht, time / buildTime);
             yield return null;

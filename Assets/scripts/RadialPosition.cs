@@ -26,7 +26,6 @@ public class RadialPosition : MonoBehaviour {
         transform.eulerAngles = new Vector3(0, 0, position);
     }
     protected virtual void Update () {
-        if (!Application.isPlaying) 
             SetPos();
             
 	}

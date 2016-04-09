@@ -11,7 +11,8 @@ public class Base : MonoBehaviour
     public Minion shield;
     public bool isLight;
     public Base enemy;
-
+    public RadialPosition LeftExplosion;
+    public RadialPosition RightExplosion;
     public int MaxHealth;
     private int health;
     public float timeToDie;
@@ -67,7 +68,12 @@ public class Base : MonoBehaviour
         {
             Health--;
             enemy.Health++;
+
+            RadialPosition t = Instantiate((m.DirectionIsToLeft) ? RightExplosion : LeftExplosion);
+            t.center = m.center;
+            t.position = m.position;
             Destroy(m.gameObject);
+
         }
         Builder b = c.GetComponent<Builder>();
         if (b != null && b.team == this)
