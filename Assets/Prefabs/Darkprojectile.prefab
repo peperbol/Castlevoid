@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5038912}
   - 114: {fileID: 11438820}
   - 212: {fileID: 21293508}
+  - 96: {fileID: 9615008}
   m_Layer: 11
   m_Name: Darkprojectile
   m_TagString: Untagged
@@ -62,6 +63,53 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!96 &9615008
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113428}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1b2dcb844831eeb49966b22f21df52f5, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.25
+  m_StartWidth: 0.25
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!114 &11438820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,6 +125,7 @@ MonoBehaviour:
   steerForce: 40000
   target: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 130685f45e52edf4894e8e99031138da, type: 3}
+  hitMaterial: {fileID: 2100000, guid: dfdc69dc180fd494a9cd0d19653890e1, type: 2}
 --- !u!212 &21293508
 SpriteRenderer:
   m_ObjectHideFlags: 1

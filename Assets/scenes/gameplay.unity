@@ -10656,8 +10656,8 @@ MonoBehaviour:
   shield: {fileID: 11499724, guid: 53fcdcfa5c7db7d43a16578caf959850, type: 2}
   isLight: 0
   enemy: {fileID: 2123535081}
-  LeftExplosion: {fileID: 11449554, guid: 01902f22feee2f3499ba402967629168, type: 2}
-  RightExplosion: {fileID: 11449554, guid: af25e41a879b85e418cf5a6f8b4bc77b, type: 2}
+  LeftExplosion: {fileID: 11440794, guid: 9217d6d7bf972464aad2a736a7a00fde, type: 2}
+  RightExplosion: {fileID: 11440794, guid: 89d3884cf69fbc04b961e0e7ed0814de, type: 2}
   MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5
@@ -11007,8 +11007,8 @@ MonoBehaviour:
   shield: {fileID: 11499724, guid: ee5939bb454d97c4ca6944baa919978c, type: 2}
   isLight: 1
   enemy: {fileID: 2091729168}
-  LeftExplosion: {fileID: 11440794, guid: 9217d6d7bf972464aad2a736a7a00fde, type: 2}
-  RightExplosion: {fileID: 11440794, guid: 89d3884cf69fbc04b961e0e7ed0814de, type: 2}
+  LeftExplosion: {fileID: 11449554, guid: 01902f22feee2f3499ba402967629168, type: 2}
+  RightExplosion: {fileID: 11449554, guid: af25e41a879b85e418cf5a6f8b4bc77b, type: 2}
   MaxHealth: 10
   timeToDie: 0.4
   buildDepth: 5
