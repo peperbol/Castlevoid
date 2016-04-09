@@ -116,7 +116,7 @@ public class House : RadialPosition, Attackable, Freezable
     public float buildDepht;
     public Text costDisplay;
     IEnumerator Building() {
-        AudioPlay.PlaySound(buildSound);
+        AudioPlay.PlaySound(buildSound,0.5f);
         float time = buildTime;
         Vector3 pos = transform.GetChild(0).position;
         Color textColor = costDisplay.color;
