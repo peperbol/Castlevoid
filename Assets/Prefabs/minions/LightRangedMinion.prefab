@@ -249,7 +249,8 @@ MonoBehaviour:
   drag: 0.2
   health: 2
   animator: {fileID: 9599738}
-  timeToDie: 1.5
+  timeToDie: 4
+  DeathFlyforce: 1000
   sight: 7.5
   sightVariation: 2
   castObjectRadius: 3

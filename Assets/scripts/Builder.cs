@@ -66,7 +66,7 @@ public class Builder : RadialMovementInput, Attackable
 
                     buildCurrentVisual[i].enabled = false;
                 }
-                
+
             }
             if (value != null)
             {
@@ -88,14 +88,16 @@ public class Builder : RadialMovementInput, Attackable
     public int Resources
     {
         get { return resources; }
-        set {
+        set
+        {
             resources = Mathf.Max(0, value);
             ResourcesDisplay.text = resources.ToString();
         }
     }
     public int resourcesPerHit;
 
-    public void Loot() {
+    public void Loot()
+    {
         Resources += resourcesPerHit;
     }
 
@@ -120,13 +122,26 @@ public class Builder : RadialMovementInput, Attackable
         }
     }
 
+    public float DeathFlyforce = 1;
     IEnumerator Die()
     {
         if (Dead) yield break;
         Dead = true;
-        yield return new WaitForSeconds(deadTime);
+        Rigidbody2D r = GetComponent<Rigidbody2D>();
+        Vector3 dir = (transform.right + transform.up * UnityEngine.Random.Range(-1, 1)) * DeathFlyforce;
+        float torque = UnityEngine.Random.Range(-4, 4);
+        float t = deadTime;
+        while (t > 0)
+        {
+            t -= Time.fixedDeltaTime;
+            r.AddForce(dir * Time.fixedDeltaTime);
+
+            r.AddTorque(torque * Time.fixedDeltaTime);
+            yield return new WaitForFixedUpdate();
+        }
         while (Frozen)
             yield return null;
+
         Dead = false;
         Position = (team.isLight) ? 270 : 90;
         Health = startHealth;
@@ -136,13 +151,30 @@ public class Builder : RadialMovementInput, Attackable
     private bool Dead
     {
         get { return dead; }
-        set {
+        set
+        {
+
+            if (value ^ dead)
+            {
+                if (value)
+                {
+                    Rigidbody2D r = gameObject.AddComponent<Rigidbody2D>();
+
+                    r.gravityScale = 0;
+                }
+                else
+                {
+                    Destroy(GetComponent<Rigidbody2D>());
+                }
+            }
             GetComponent<Collider2D>().enabled = !value;
             dead = value;
+
+            detached = value;
             CanMove = !value;
             animator.SetBool("Dead", value);
 
-       }
+        }
     }
     public float deadTime = 2.5f;
     private bool ready = true;
@@ -151,13 +183,14 @@ public class Builder : RadialMovementInput, Attackable
     public LayerMask attackMask;
     public float buildTime = 0.7f;
 
-    protected void tryAttack() {
+    protected void tryAttack()
+    {
         if (ready) StartCoroutine(Attack());
     }
 
     protected bool CanHitEnemy(out List<Attackable> a)
     {
-        
+
         a = new List<Attackable>();
         RaycastHit2D[] h = Physics2D.RaycastAll(transform.position, (DirectionIsToLeft) ? transform.up : -transform.up, attackRange, attackMask);
         Attackable at;
@@ -184,26 +217,28 @@ public class Builder : RadialMovementInput, Attackable
                 {
                     flipIgnore[i].localScale = new Vector3(flipIgnore[i].localScale.x, -flipIgnore[i].localScale.y, flipIgnore[i].localScale.z);
                 }
-                
+
             }
 
             directionIsToLeft = value;
         }
     }
-    IEnumerator Attack() {
+    IEnumerator Attack()
+    {
         animator.SetBool("Attack", true);
         ready = false;
         AudioPlay.PlaySound(attackSound);
         CanMove = false;
-        yield return new WaitForSeconds(attackTime/8 *3);
+        yield return new WaitForSeconds(attackTime / 8 * 3);
 
         List<Attackable> a;
-        if (CanHitEnemy(out a)) {
+        if (CanHitEnemy(out a))
+        {
             a.ForEach(e => e.Damage(this));
             AudioPlay.PlaySound(hitSound);
         }
         animator.SetBool("Attack", false);
-        yield return new WaitForSeconds(attackTime / 8  *2 );
+        yield return new WaitForSeconds(attackTime / 8 * 2);
         CanMove = true;
         yield return new WaitForSeconds(attackTime / 8 * 2);
         ready = true;
@@ -229,16 +264,17 @@ public class Builder : RadialMovementInput, Attackable
     private Color resourcesColor;
     private int resourcesSize;
     public float warnResourcesTimer = 0;
-    public float warnResourcesDuration= 0.2f;
+    public float warnResourcesDuration = 0.2f;
     public float warnResourcesAnimationSpeed = 0.5f;
     public Color warnResourcesColor = Color.red;
     public int warnResourcesSize;
 
     public AudioClip ErrorSound;
-
+    private bool detached;
     protected override void Update()
     {
-        base.Update();
+        if (!detached)
+            base.Update();
         if (!Application.isPlaying) return;
         if (inUse && CanMove && !Frozen)
         {
@@ -306,7 +342,7 @@ public class Builder : RadialMovementInput, Attackable
                     StartCoroutine(BuildHouse(archerPrefab));
                 }
             }
-            if (Input.GetButton(attack) )
+            if (Input.GetButton(attack))
             {
                 Preview = Minion.Type.None;
                 tryAttack();
@@ -327,13 +363,13 @@ public class Builder : RadialMovementInput, Attackable
             }
         }
         animator.SetBool("Walking", Mathf.Abs(speed) > 0.05f);
-       
+
         Vector3 v = scewObject.localScale;
         v.y = yScale * (1 + speedYScaling * Mathf.Abs(speed));
         v.x = xScale * (1 - speedXScaling * Mathf.Abs(speed));
         scewObject.localScale = v;
 
-        if(warnResourcesTimer > 0)
+        if (warnResourcesTimer > 0)
         {
             warnResourcesTimer -= Time.deltaTime;
 
@@ -343,14 +379,15 @@ public class Builder : RadialMovementInput, Attackable
         }
         else
         {
-            ResourcesDisplay.color = Color.Lerp(ResourcesDisplay.color, resourcesColor,warnResourcesAnimationSpeed);
+            ResourcesDisplay.color = Color.Lerp(ResourcesDisplay.color, resourcesColor, warnResourcesAnimationSpeed);
             if (ResourcesDisplay.fontSize > resourcesSize)
                 ResourcesDisplay.fontSize--;
         }
     }
-    public void WarnResources() {
+    public void WarnResources()
+    {
         warnResourcesTimer = warnResourcesDuration;
-        AudioPlay.PlaySound(ErrorSound,0.5f);
+        AudioPlay.PlaySound(ErrorSound, 0.5f);
     }
 
     public Renderer[] visuals;
@@ -396,7 +433,8 @@ public class Builder : RadialMovementInput, Attackable
         }
 
     }
-    void Start() {
+    void Start()
+    {
         if (!Application.isPlaying) return;
         resources = StartResources;
         yScale = scewObject.localScale.y;

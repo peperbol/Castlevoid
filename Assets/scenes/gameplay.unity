@@ -1351,6 +1351,7 @@ MonoBehaviour:
   ResourcesDisplay: {fileID: 1212340191}
   resourcesPerHit: 1
   startHealth: 10
+  DeathFlyforce: 1000
   deadTime: 2.5
   attackTime: 0.4
   attackRange: 1.6
@@ -10408,6 +10409,7 @@ MonoBehaviour:
   ResourcesDisplay: {fileID: 1612412589}
   resourcesPerHit: 1
   startHealth: 10
+  DeathFlyforce: 1000
   deadTime: 2.5
   attackTime: 0.4
   attackRange: 1.6

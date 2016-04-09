@@ -3900,6 +3900,7 @@ GameObject:
   - 114: {fileID: 548465199}
   - 33: {fileID: 548465198}
   - 23: {fileID: 548465197}
+  - 50: {fileID: 548465201}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3957,7 +3958,6 @@ MonoBehaviour:
   split: 0.8
   p1: {fileID: 0}
   p2: {fileID: 0}
-  PieChart: {fileID: 0}
 --- !u!4 &548465200
 Transform:
   m_ObjectHideFlags: 0
@@ -3970,6 +3970,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!50 &548465201
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548465196}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &558930923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,7 +5081,7 @@ ParticleSystem:
         rgba: 3094160676
       minMaxState: 1
     startSize:
-      scalar: 8
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5227,7 +5244,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 80
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8149,13 +8166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c15a41a8ea06d64bbb0e92867cf264d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n: 30
+  n: 50
   radius: 15
   depth: 5
   split: 0.097
   p1: {fileID: 1514371386}
   p2: {fileID: 884069856}
-  PieChart: {fileID: 2100000, guid: 55f1167d9da14574582f10df1d4ed9a3, type: 2}
 --- !u!1 &1379839364
 GameObject:
   m_ObjectHideFlags: 0
@@ -8638,7 +8654,7 @@ ParticleSystem:
         rgba: 3094160676
       minMaxState: 1
     startSize:
-      scalar: 8
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8801,7 +8817,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 80
       maxCurve:
         serializedVersion: 2
         m_Curve:

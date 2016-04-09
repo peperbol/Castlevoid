@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System;
-
+using UnityEngine;
 public abstract class Minion : RadialMovement, Attackable, Freezable
 {
     public static void Spawn(Minion prefab, bool toLeft, float pos)
@@ -35,13 +35,26 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
             }
         }
     }
+    public float DeathFlyforce = 1;
     protected virtual IEnumerator Die()
     {
 
         dead = true;
         Destroy(GetComponent<Collider2D>());
         animator.SetTrigger("Die");
-        yield return new WaitForSeconds(timeToDie);
+        Rigidbody2D r = gameObject.AddComponent<Rigidbody2D>();
+        r.gravityScale = 0;
+        detached = true;
+        Vector3 dir = (transform.right + transform.up * UnityEngine.Random.Range(-1, 1)) * DeathFlyforce;
+        float torque = UnityEngine.Random.Range(-4, 4);
+        float t = timeToDie;
+        while (t>0) {
+            t -= Time.fixedDeltaTime;
+            r.AddForce(dir * Time.fixedDeltaTime);
+
+            r.AddTorque(torque * Time.fixedDeltaTime);
+            yield return new WaitForFixedUpdate();
+        } 
         Destroy(gameObject);
     }
     public float sight;
@@ -89,10 +102,11 @@ public abstract class Minion : RadialMovement, Attackable, Freezable
     protected abstract void Attack(GameObject go, Attackable a);
 
     public bool dead = false;
-
+    bool detached = false;
     protected override void Update()
     {
-        base.Update();
+        if(!detached)
+            base.Update();
         if (!dead && !frozen)
         {
             Attackable a;
