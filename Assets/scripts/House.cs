@@ -157,7 +157,7 @@ public class House : RadialPosition, Attackable, Freezable
         teamBase.houses.Add(this);
     }
 
-    IEnumerator Destroy() {
+    public IEnumerator Destroy() {
         completed = false;
 
         AudioPlay.PlaySound(buildSound);

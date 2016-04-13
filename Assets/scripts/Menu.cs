@@ -174,7 +174,7 @@ public class Menu : MonoBehaviour
         }
         for (int i = 0; i < hs.Length; i++)
         {
-            hs[i].Health = 0;
+            hs[i].StartCoroutine(hs[i].Destroy());
         }
         for (int i = 0; i < bs.Length; i++)
         {
