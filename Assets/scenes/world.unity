@@ -4073,6 +4073,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 734553011}
+  - 114: {fileID: 734553012}
   m_Layer: 0
   m_Name: Scew
   m_TagString: Untagged
@@ -4094,6 +4095,23 @@ Transform:
   - {fileID: 870734310}
   m_Father: {fileID: 0}
   m_RootOrder: 14
+--- !u!114 &734553012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 734553010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e27e8f1b8069034e8b5d6eff767f74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshFilter: {fileID: 870734312}
+  MoveSpeed: 0.05
+  visualWidth: 0.05
+  visualColor: {r: 1, g: 0, b: 0, a: 1}
+  deadZone: 0.5
+  cam: {fileID: 76371861}
 --- !u!1 &747187975
 GameObject:
   m_ObjectHideFlags: 0

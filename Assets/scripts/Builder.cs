@@ -277,7 +277,7 @@ public class Builder : RadialMovementInput, Attackable
         if (!detached)
             base.Update();
         if (!Application.isPlaying) return;
-        if (inUse && CanMove && !Frozen)
+        if ( CanMove && !Frozen)
         {
             /*
             //Debug.Log(Input.GetAxis(Build));
