@@ -53,6 +53,7 @@ public class Builder : RadialMovementInput, Attackable
     public Renderer[] buildWallVisual;
     public Renderer[] buildArcherVisual;
     private Renderer[] buildCurrentVisual;
+    public GameObject buildMenu;
 
     protected Renderer[] CurrentPreview
     {
@@ -77,6 +78,7 @@ public class Builder : RadialMovementInput, Attackable
                     value[i].enabled = true;
                 }
             }
+            buildMenu.SetActive(value != null);
             buildCurrentVisual = value;
         }
     }

@@ -441,6 +441,73 @@ Transform:
   - {fileID: 1165819902}
   m_Father: {fileID: 742112282}
   m_RootOrder: 0
+--- !u!1 &157057932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 157057933}
+  - 222: {fileID: 157057935}
+  - 114: {fileID: 157057934}
+  m_Layer: 16
+  m_Name: buildmenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &157057933
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 157057932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2101869115}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 198, y: 167}
+  m_SizeDelta: {x: 700, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &157057934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 157057932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: bf9f16d84e9596b45a6ef63b91c4bacb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &157057935
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 157057932}
 --- !u!1 &165649059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1445,6 @@ MonoBehaviour:
   maxFOV: 100
   horizontalButton: Horizontal2
   verticalButton: Vertical2
-  inUse: 1
-  cam: {fileID: 567182049}
   deadZone: 0.5
   Special1: Sp1_2
   Special2: Sp2_2
@@ -1404,6 +1469,7 @@ MonoBehaviour:
   - {fileID: 1798294402}
   buildArcherVisual:
   - {fileID: 931281103}
+  buildMenu: {fileID: 2068691648}
   buildPositive: {fileID: 2100000, guid: 0e514a16306e37e438ef247d9e219500, type: 2}
   buildNegative: {fileID: 2100000, guid: fd86723d49b58c44fb044e294f8c80a1, type: 2}
   StartResources: 18
@@ -3528,8 +3594,6 @@ MonoBehaviour:
   maxFOV: 100
   horizontalButton: Horizontal2
   verticalButton: Vertical2
-  inUse: 0
-  cam: {fileID: 588860578}
   deadZone: 0.5
 --- !u!4 &697678783
 Transform:
@@ -4007,6 +4071,7 @@ RectTransform:
   m_Children:
   - {fileID: 739242837}
   - {fileID: 1212340190}
+  - {fileID: 2068691649}
   m_Father: {fileID: 2119936477}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7480,8 +7545,6 @@ MonoBehaviour:
   maxFOV: 100
   horizontalButton: Horizontal1
   verticalButton: Vertical1
-  inUse: 0
-  cam: {fileID: 2113060870}
   deadZone: 0.5
 --- !u!4 &1669710537
 Transform:
@@ -10495,8 +10558,6 @@ MonoBehaviour:
   maxFOV: 100
   horizontalButton: Horizontal1
   verticalButton: Vertical1
-  inUse: 1
-  cam: {fileID: 17257471}
   deadZone: 0.5
   Special1: Sp1_1
   Special2: Sp2_1
@@ -10521,6 +10582,7 @@ MonoBehaviour:
   - {fileID: 1694270770}
   buildArcherVisual:
   - {fileID: 2076806218}
+  buildMenu: {fileID: 157057932}
   buildPositive: {fileID: 2100000, guid: 0e514a16306e37e438ef247d9e219500, type: 2}
   buildNegative: {fileID: 2100000, guid: fd86723d49b58c44fb044e294f8c80a1, type: 2}
   StartResources: 18
@@ -10675,6 +10737,73 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2068691648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2068691649}
+  - 222: {fileID: 2068691651}
+  - 114: {fileID: 2068691650}
+  m_Layer: 16
+  m_Name: buildmenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2068691649
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068691648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 819217046}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 198, y: 196}
+  m_SizeDelta: {x: 700, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2068691650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068691648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: bf9f16d84e9596b45a6ef63b91c4bacb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2068691651
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068691648}
 --- !u!1 &2076806216
 GameObject:
   m_ObjectHideFlags: 0
@@ -10877,6 +11006,7 @@ RectTransform:
   m_Children:
   - {fileID: 1960978970}
   - {fileID: 1612412588}
+  - {fileID: 157057933}
   m_Father: {fileID: 378190056}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
