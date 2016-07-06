@@ -274,8 +274,8 @@ public class ScewSquare : MonoBehaviour
         Vector3 lb = v[0];
         Vector3 rb = v[(divisions + 2) * (divisions + 1)];
         Vector3 rt = v[(divisions + 2) * (divisions + 2) - 1];
-        float tb =  (lt - rt).magnitude / (lb - rb).magnitude;
-        float rl =  (rb - rt).magnitude / (lt - lb).magnitude;
+        float tb =  (lt - rt).magnitude /( (lt - rt).magnitude + ( (lb - rb).magnitude- (lt - rt).magnitude) / (divisions+1));
+        float rl =  (rb - rt).magnitude / ((rb - rt).magnitude + ( (lt - lb).magnitude - (rb - rt).magnitude)/ (divisions+1));
 
         // a * b^0 + a * b^1+ a * b^2 + ... + a * b^n = 1
         // a = 1 / (b^0 + b^1 + b^2 + ... + b^n)
@@ -365,11 +365,6 @@ public class ScewSquare : MonoBehaviour
             else
             {
                 usedNav = false;
-            }
-
-            if (Input.GetButtonDown("Attack1") || Input.GetButtonDown("Attack2"))
-            {
-                OptimizeSize();
             }
 
             float h = Input.GetAxis("HorizontalAny");
