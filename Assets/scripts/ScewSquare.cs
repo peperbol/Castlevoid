@@ -9,6 +9,7 @@ public class ScewSquare : MonoBehaviour
     public float visualWidth = 0.05f;
     public Color visualColor;
     public float deadZone;
+    public int divisions = 2;
     bool isEnabled = false;
     int movingId = 0;
     bool movingEdge = true;
@@ -222,42 +223,111 @@ public class ScewSquare : MonoBehaviour
     {
         Mesh m = new Mesh();
         meshFilter.mesh = m;
-        m.vertices = new Vector3[]
-            {
-                new Vector3(-0.5f,-0.5f),
-                new Vector3(-0.5f,0.5f),
-                new Vector3(0.5f,0.5f),
-                new Vector3(0.5f,-0.5f),
-                new Vector3(0,0)
-            };
-        m.triangles = new int[] {
-            4, 0, 1,
-            4, 1, 2,
-            4, 2, 3,
-            4, 3, 0
-            };
-        m.uv = new Vector2[]
-           {
-               new Vector2(0,0),
-               new Vector2(0,1),
-               new Vector2(1,1),
-               new Vector2(1,0),
-               new Vector2(0.5f,0.5f)
-           };
 
+        Vector3[] vertices = new Vector3[(2 + divisions) * (2 + divisions)];
+        for (int x = 0; x < 2 + divisions; x++)
+        {
+            for (int y = 0; y < 2 + divisions; y++)
+            {
+                vertices[y + x * (2 + divisions)] = new Vector3(x / ((float)divisions + 1) -0.5f,  y /((float)divisions + 1)-0.5f);
+            }
+        }
+
+        m.vertices = vertices;
+
+        int[] triangles = new int[(1 + divisions) * (1 + divisions) * 6];
+
+        for (int x = 0; x < 1 + divisions; x++)
+        {
+            for (int y = 0; y < 1 + divisions; y++)
+            {
+                triangles[(y + x * (1 + divisions)) * 6 + 0] = y   + (x  ) * (2 + divisions);
+                triangles[(y + x * (1 + divisions)) * 6 + 1] = y+1 + (x+1) * (2 + divisions);
+                triangles[(y + x * (1 + divisions)) * 6 + 2] = y   + (x+1) * (2 + divisions);
+                triangles[(y + x * (1 + divisions)) * 6 + 3] = y   + (x  ) * (2 + divisions);
+                triangles[(y + x * (1 + divisions)) * 6 + 4] = y+1 + (x  ) * (2 + divisions);
+                triangles[(y + x * (1 + divisions)) * 6 + 5] = y+1 + (x+1) * (2 + divisions);
+            }
+        }
+
+        m.triangles = triangles;
+
+        Vector2[] uv = new Vector2[(2 + divisions) * (2 + divisions)];
+
+        for (int x = 0; x < 2 + divisions; x++)
+        {
+            for (int y = 0; y < 2 + divisions; y++)
+            {
+                uv[y + x * (2 + divisions)] = new Vector2(x / ((float)divisions + 1) , y / ((float)divisions + 1) );
+            }
+        }
+
+        m.uv = uv; 
+       
     }
     void OptimizeSize()
     {
+        
         Vector3[] v = meshFilter.mesh.vertices;
-        float ys = v.Max(e => e.y) - v.Min(e => e.y);
-        Vector3 center = new Vector3(v.Average(e => e.x), v.Average(e => e.y));
-        for (int i = 0; i < v.Length; i++)
-        {
-            v[i] -= center;
-            v[i] = v[i] / ys;
+
+        Vector3 lt = v[divisions + 1];
+        Vector3 lb = v[0];
+        Vector3 rb = v[(divisions + 2) * (divisions + 1)];
+        Vector3 rt = v[(divisions + 2) * (divisions + 2) - 1];
+        float tb =  (lt - rt).magnitude / (lb - rb).magnitude;
+        float rl =  (rb - rt).magnitude / (lt - lb).magnitude;
+
+        // a * b^0 + a * b^1+ a * b^2 + ... + a * b^n = 1
+        // a = 1 / (b^0 + b^1 + b^2 + ... + b^n)
+        float btbase = 1;
+        { 
+            float[] e = new float[divisions + 1];
+            for (int i = 0; i < divisions + 1; i++)
+            {
+                e[i] = Mathf.Pow(tb, i);
+            }
+            btbase = 1 / e.Sum();
         }
-        v[4] = Vector3.zero;
+        float lrbase = 1;
+        {
+            float[] e = new float[divisions + 1];
+            for (int i = 0; i < divisions + 1; i++)
+            {
+                e[i] = Mathf.Pow(rl, i);
+            }
+            lrbase = 1 / e.Sum();
+        }
+        {
+            float last = 0;
+            for (int y = 1; y < (divisions+1); y++)
+            {
+                last += btbase * Mathf.Pow(tb, y-1);
+                v[y] = Vector3.Lerp(lb, lt, last);
+            }
+        }
+
+        {
+            float last = 0;
+            for (int y = 1; y < (divisions+1); y++)
+            {
+                last += btbase * Mathf.Pow(tb, y-1);
+                v[(divisions + 2) * (divisions + 1) + y] = Vector3.Lerp(rb, rt, last);
+            }
+        }
+
+        for (int y = 0; y < (divisions+2); y++)
+        {
+            float last = 0;
+            for (int x = 1; x < (divisions+1); x++)
+            {
+                last += lrbase * Mathf.Pow(rl, x-1);
+                v[y + x * (2 + divisions)] = Vector3.Lerp(v[y], v[y + (divisions + 1) * (2 + divisions)], last);
+            }
+        }
+
+        float ys = v.Max(e => e.y) - v.Min(e => e.y);
         meshFilter.mesh.vertices = v;
+        
     }
     void Update()
     {
@@ -316,28 +386,47 @@ public class ScewSquare : MonoBehaviour
                 {
                     MovePoint(movingId, Input.GetAxis("HorizontalAny"), Input.GetAxis("VerticalAny"));
                 }
+
+                OptimizeSize();
             }
             UpdateVisual();
         }
+    }
+    int selectedIndexToMeshIndex(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                return 0;
+            case 1:
+                return divisions + 1;
+            case 2:
+                return (divisions + 2) * (divisions + 2) - 1;
+            case 3:
+                return (divisions + 2) * (divisions + 1);
+        }
+        return 0;
     }
     void UpdateVisual()
     {
         if (movingEdge)
         {
-            visual.localScale = new Vector3(visualWidth, visualWidth, Vector3.Distance(meshFilter.mesh.vertices[movingId], meshFilter.mesh.vertices[(movingId + 1) % 4]));
-            visual.localPosition = (meshFilter.mesh.vertices[movingId] + meshFilter.mesh.vertices[(movingId + 1) % 4]) / 2;
-            visual.LookAt(meshFilter.transform.position + Vector3.Scale(meshFilter.mesh.vertices[movingId], meshFilter.transform.lossyScale));
+            visual.localScale = new Vector3(visualWidth, visualWidth, Vector3.Distance(meshFilter.mesh.vertices[selectedIndexToMeshIndex(movingId)], meshFilter.mesh.vertices[selectedIndexToMeshIndex((movingId + 1) % 4)]));
+            visual.localPosition = (meshFilter.mesh.vertices[selectedIndexToMeshIndex(movingId)] + meshFilter.mesh.vertices[selectedIndexToMeshIndex((movingId + 1) % 4)]) / 2;
+            visual.LookAt(meshFilter.transform.position + Vector3.Scale(meshFilter.mesh.vertices[selectedIndexToMeshIndex(movingId)], meshFilter.transform.lossyScale));
         }
         else
         {
             visual.localScale = Vector3.one * visualWidth;
-            visual.localPosition = meshFilter.mesh.vertices[movingId];
+            visual.localPosition = meshFilter.mesh.vertices[selectedIndexToMeshIndex(movingId)];
         }
     }
     void MovePoint(int i, float x, float y)
     {
         Vector3[] v = meshFilter.mesh.vertices;
-        v[i] += new Vector3(x, y) * MoveSpeed * Time.deltaTime;
+        int index = 0;
+
+        v[selectedIndexToMeshIndex(i)] += new Vector3(x, y) * MoveSpeed * Time.deltaTime;
         meshFilter.mesh.vertices = v;
     }
 }

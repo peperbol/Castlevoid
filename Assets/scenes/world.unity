@@ -4111,6 +4111,7 @@ MonoBehaviour:
   visualWidth: 0.05
   visualColor: {r: 1, g: 0, b: 0, a: 1}
   deadZone: 0.5
+  divisions: 10
   cam: {fileID: 76371861}
 --- !u!1 &747187975
 GameObject:
