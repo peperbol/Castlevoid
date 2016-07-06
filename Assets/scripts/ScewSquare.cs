@@ -324,8 +324,17 @@ public class ScewSquare : MonoBehaviour
                 v[y + x * (2 + divisions)] = Vector3.Lerp(v[y], v[y + (divisions + 1) * (2 + divisions)], last);
             }
         }
-
+        
         float ys = v.Max(e => e.y) - v.Min(e => e.y);
+
+        Vector3 center = new Vector3((v.Max(e => e.x) + v.Min(e => e.x)) / 2, (v.Max(e => e.y) + v.Min(e => e.y)) / 2);
+        Debug.Log(center);
+        for (int i = 0; i < v.Length; i++)
+        {
+            v[i] = (v[i]- center)/ ys;
+        }
+        
+
         meshFilter.mesh.vertices = v;
         
     }
