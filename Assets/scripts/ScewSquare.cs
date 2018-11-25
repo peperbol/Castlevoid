@@ -216,7 +216,7 @@ public class ScewSquare : MonoBehaviour
     }
     void MaxResolution()
     {
-        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
+        //Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
 
     }
     void MakeMesh()

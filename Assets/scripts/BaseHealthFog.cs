@@ -11,6 +11,8 @@ public class BaseHealthFog : MonoBehaviour {
     public ParticleSystem p1;
     public ParticleSystem p2;
     float particleRate;
+
+    private BaseHealthPieChart baseHealthPieChart;
     void Start () {
 
         var s1 = p1.shape;
@@ -74,8 +76,8 @@ public class BaseHealthFog : MonoBehaviour {
         m1.triangles = genPolies(v1);
         m2.vertices = v2;
         m2.triangles = genPolies(v2);
-        m1.Optimize();
-        m2.Optimize();
+        ;
+        ;
 
         var e1 = p1.emission;
         var r1 = e1.rate;
@@ -135,7 +137,9 @@ public class BaseHealthFog : MonoBehaviour {
     }
     float prevsplit;
 	void Update () {
-        split = 1 - FindObjectOfType< BaseHealthPieChart>().target;
+	    if (baseHealthPieChart == null) baseHealthPieChart = FindObjectOfType<BaseHealthPieChart>();
+	    
+        split = 1 - baseHealthPieChart.target;
         if ( !Mathf.Approximately( prevsplit ,split))
         {
             prevsplit = split;
